@@ -9,6 +9,7 @@ abbreviation: PLA
 url: https://www.sovb3d.fr/pla-175mm-standard-1kg/108-fil-pla-noir-175mm-1kg.html
 primary_color:
   color_rgba: '#000000ff'
+  color_ral: '9011'
 tags:
 - industrially_compostable
 properties: {}
