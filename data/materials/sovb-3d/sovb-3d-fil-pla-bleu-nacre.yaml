@@ -1,14 +1,14 @@
-uuid: f76d56e9-d9fb-59fa-81f3-85838651e66d
-slug: sovb-3d-fil-pla-beige-nacr
+uuid: 7d6ecce5-f676-5ec6-9333-cde653055c49
+slug: sovb-3d-fil-pla-bleu-nacre
 brand:
   slug: sovb-3d
-name: Fil PLA Beige Nacré
+name: Fil PLA Bleu Nacré
 class: FFF
 type: PLA
 abbreviation: PLA
-url: https://www.sovb3d.fr/pla-175mm-standard-1kg/220-fil-pla-beige-nacre-175mm-1kg.html
+url: https://www.sovb3d.fr/pla-175mm-standard-1kg/219-fil-pla-bleu-nacre-175mm-1kg.html
 primary_color:
-  color_rgba: '#e6ba83ff'
+  color_rgba: '#0066d9ff'
 tags:
 - industrially_compostable
 properties:
