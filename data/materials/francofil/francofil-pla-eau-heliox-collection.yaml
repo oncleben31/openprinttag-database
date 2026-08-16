@@ -1,0 +1,15 @@
+uuid: 87eebb9c-ba6f-56fd-996e-17d8ed463dac
+slug: francofil-pla-eau-heliox-collection
+brand:
+  slug: francofil
+name: PLA Eau Heliox Collection
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#50b8e0ff'
+tags:
+- industrially_compostable
+- iridescent
+properties:
+  density: 1.24

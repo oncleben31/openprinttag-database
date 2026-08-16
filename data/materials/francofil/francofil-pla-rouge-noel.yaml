@@ -1,0 +1,15 @@
+uuid: 482e1b91-452b-51e8-bc13-bb7d12fe1ff9
+slug: francofil-pla-rouge-noel
+brand:
+  slug: francofil
+name: PLA Rouge Noël
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#c03030ff'
+tags:
+- industrially_compostable
+- imitates_metal
+properties:
+  density: 1.24

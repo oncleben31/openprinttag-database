@@ -1,0 +1,15 @@
+uuid: 4c0cb129-f5a9-572b-9563-e56ed5c691f6
+slug: francofil-pla-feu-heliox-collection
+brand:
+  slug: francofil
+name: PLA Feu Heliox Collection
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#d83008ff'
+tags:
+- industrially_compostable
+- imitates_metal
+properties:
+  density: 1.24

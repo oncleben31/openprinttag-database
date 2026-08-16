@@ -1,0 +1,16 @@
+uuid: 2753945f-ef23-5f62-be74-54ba94dc6390
+slug: francofil-pla-terre-heliox-collection
+brand:
+  slug: francofil
+name: PLA Terre Heliox Collection
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#487070ff'
+tags:
+- industrially_compostable
+- iridescent
+- imitates_metal
+properties:
+  density: 1.24
