@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-blue-500-spool-2041
+brand_specific_id: F-TPU85ABLEU
+class: FFF
+url: https://www.arianeplast.com/en/tpu-shore-85a/2041-filament-tpu-85a-bleu-175mm.html
+material:
+  slug: arianeplast-tpu-blue
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

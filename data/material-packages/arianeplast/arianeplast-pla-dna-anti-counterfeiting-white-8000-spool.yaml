@@ -1,0 +1,10 @@
+slug: arianeplast-pla-dna-anti-counterfeiting-white-8000-spool
+brand_specific_id: F-ADNPLABLANC8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2713-pla-adn-filament-anti-contrefacon-blanc-8kg.html
+material:
+  slug: arianeplast-pla-dna-anti-counterfeiting-white
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

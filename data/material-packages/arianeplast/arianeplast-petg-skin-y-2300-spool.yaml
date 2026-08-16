@@ -1,0 +1,10 @@
+slug: arianeplast-petg-skin-y-2300-spool
+brand_specific_id: FPETG3Y
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/557-petg-peau-3y09sp-3d-filament-arianeplast-fabrique-en-france--3760276362123.html
+material:
+  slug: arianeplast-petg-skin-y
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

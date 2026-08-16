@@ -1,0 +1,11 @@
+slug: arianeplast-pla-khaki-8000-spool
+brand_specific_id: F-PLAKAKI8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2918-pla-kaki-3d-filament-arianeplast-8kg.html
+material:
+  slug: arianeplast-pla-khaki
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760349165170

@@ -1,0 +1,10 @@
+slug: arianeplast-pla-metallic-aluminum-2300-spool
+brand_specific_id: INGEO-3D870-ALUMET
+class: FFF
+url: https://www.arianeplast.com/en/ingeo-3d870/1985-pla-ingeo-3d870-aluminium-metallise-qualite-professionnelle.html
+material:
+  slug: arianeplast-pla-metallic-aluminum
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

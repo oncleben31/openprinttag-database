@@ -1,0 +1,11 @@
+slug: arianeplast-pla-white-1000-spool-104
+brand_specific_id: PLA+Blanc4043D
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/104-plablanc4043d-pla-blanc-4043d-3d-filament-arianeplast-fabrique-en-france-1kg.html
+material:
+  slug: arianeplast-pla-white
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770006552250

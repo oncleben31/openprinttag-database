@@ -1,0 +1,11 @@
+slug: arianeplast-pla-orange-1000-spool
+brand_specific_id: INGEO-3D870-ORANGE
+class: FFF
+url: https://www.arianeplast.com/en/ingeo-3d870/1734-pla-ingeo-3d870-orange-175mm-qualite-professionnelle.html
+material:
+  slug: arianeplast-pla-orange
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276363519

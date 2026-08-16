@@ -1,0 +1,11 @@
+slug: arianeplast-tpu-white-1000-spool
+brand_specific_id: G30-TPU95ABLC
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2437-filament-tpu-95a-blanc-.html
+material:
+  slug: arianeplast-tpu-white
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770008753204

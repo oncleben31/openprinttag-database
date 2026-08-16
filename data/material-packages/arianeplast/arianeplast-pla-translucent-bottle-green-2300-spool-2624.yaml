@@ -1,0 +1,10 @@
+slug: arianeplast-pla-translucent-bottle-green-2300-spool-2624
+brand_specific_id: F-PLAVERTBOUTRAN8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2624-pla-vert-bouteille-translucide-3d-filament-23kg-fabrique-en-france-arianeplast.html
+material:
+  slug: arianeplast-pla-translucent-bottle-green
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

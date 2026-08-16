@@ -1,0 +1,10 @@
+slug: arianeplast-petg-blue-1000-spool-5093
+class: FFF
+url: https://www.arianeplast.com/en/refill-petg/5093-refill-petg-bleu-france-1kg-175mm.html
+material:
+  slug: arianeplast-petg-blue
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166306

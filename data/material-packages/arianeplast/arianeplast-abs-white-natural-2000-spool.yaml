@@ -1,0 +1,11 @@
+slug: arianeplast-abs-white-natural-2000-spool
+brand_specific_id: F-ABSBASIC-NATUREL
+class: FFF
+url: https://www.arianeplast.com/en/abs-format-2kg/190-abs-blanc-naturel-2kg.html
+material:
+  slug: arianeplast-abs-white-natural
+nominal_netto_full_weight: 2000
+container:
+  slug: 2000g
+filament_diameter: 1750
+gtin: 3760276361959

@@ -1,0 +1,11 @@
+slug: arianeplast-abs-white-natural-8000-spool
+brand_specific_id: F-BASIC-nature
+class: FFF
+url: https://www.arianeplast.com/en/abs-format-1kg/2152-abs-blanc-nature-3d-filament-arianeplast-8kg.html
+material:
+  slug: arianeplast-abs-white-natural
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760349160939

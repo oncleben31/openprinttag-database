@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-blue-500-spool
+brand_specific_id: G19-TPU95ABLEU
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2438-filament-tpu-95a-bleu-175mm.html
+material:
+  slug: arianeplast-tpu-blue
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

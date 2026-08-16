@@ -1,0 +1,11 @@
+slug: arianeplast-pla-gold-metallic-1000-spool
+brand_specific_id: REFPLAGOLD
+class: FFF
+url: https://www.arianeplast.com/en/refill-pla/5171-refill-pla-gold-1kg-175mm-filament-3d.html
+material:
+  slug: arianeplast-pla-gold-metallic
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166269

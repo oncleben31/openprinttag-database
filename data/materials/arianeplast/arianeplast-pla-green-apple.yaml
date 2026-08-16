@@ -1,0 +1,11 @@
+uuid: e26f608b-d7ef-542f-9c26-c29ac33348a8
+slug: arianeplast-pla-green-apple
+brand:
+  slug: arianeplast
+name: Green Apple
+class: FFF
+type: PLA
+abbreviation: PLA
+tags:
+- industrially_compostable
+properties: {}

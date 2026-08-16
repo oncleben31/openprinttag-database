@@ -1,0 +1,11 @@
+slug: arianeplast-abs-pink-1000-spool
+brand_specific_id: F-ABSB-ROSE
+class: FFF
+url: https://www.arianeplast.com/en/abs-format-1kg/153-abs-basic-rose.html
+material:
+  slug: arianeplast-abs-pink
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770008753846

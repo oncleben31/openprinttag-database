@@ -1,0 +1,10 @@
+slug: arianeplast-petg-carbon-2300-spool
+brand_specific_id: PETG Carbone
+class: FFF
+url: https://www.arianeplast.com/en/filaments-carbone/1651-petg-carbone-175mm-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-carbon
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

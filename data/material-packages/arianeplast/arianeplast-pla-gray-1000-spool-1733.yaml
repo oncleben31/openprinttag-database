@@ -1,0 +1,11 @@
+slug: arianeplast-pla-gray-1000-spool-1733
+brand_specific_id: INGEO-3D870-GRIS
+class: FFF
+url: https://www.arianeplast.com/en/ingeo-3d870/1733-pla-ingeo-3d870-gris-qualite-professionnelle.html
+material:
+  slug: arianeplast-pla-gray
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276363526

@@ -1,0 +1,11 @@
+slug: arianeplast-pla-white-1000-spool
+brand_specific_id: F1kg-LASER-B-175
+class: FFF
+url: https://www.arianeplast.com/en/3d-filaments-marquage-laser-/196-1kg-blanc.html
+material:
+  slug: arianeplast-pla-white
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276360228

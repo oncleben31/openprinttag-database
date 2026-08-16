@@ -1,0 +1,11 @@
+slug: arianeplast-pla-skin-5y09sp-1000-spool-5088
+brand_specific_id: REFPLA3Y09
+class: FFF
+url: https://www.arianeplast.com/en/refill-pla/5088-refill-pla-peau-3y09sp-1kg-175mm.html
+material:
+  slug: arianeplast-pla-skin-5y09sp
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349162322

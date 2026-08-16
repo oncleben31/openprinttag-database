@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-red-500-spool
+brand_specific_id: G28-TPU95ARGE
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2443-filament-tpu-95a-rouge-175mm.html
+material:
+  slug: arianeplast-tpu-red
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

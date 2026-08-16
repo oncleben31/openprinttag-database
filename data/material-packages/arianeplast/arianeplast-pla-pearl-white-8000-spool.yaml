@@ -1,0 +1,10 @@
+slug: arianeplast-pla-pearl-white-8000-spool
+brand_specific_id: F-PLABLANCNACR8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2648-pla-blanc-nacre-3d-filament-8kg-fabrique-en-france-arianeplast.html
+material:
+  slug: arianeplast-pla-pearl-white
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

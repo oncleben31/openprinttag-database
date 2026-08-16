@@ -1,0 +1,10 @@
+slug: arianeplast-pla-yellow-cmyk-lithophany-1000-spool
+class: FFF
+url: https://www.arianeplast.com/en/filaments-litophanie/5296-pla-jaune-cmyk-litophanie-1kg-175mm-3760349168478.html
+material:
+  slug: arianeplast-pla-yellow-cmyk-lithophany
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349168478

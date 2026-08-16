@@ -1,0 +1,11 @@
+slug: arianeplast-pla-dna-anti-counterfeiting-black-1000-spool
+brand_specific_id: F-ADNPLANOIR1
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/2708-pla-adn-filament-anti-contrefacon-noir-1kg-3760349165323.html
+material:
+  slug: arianeplast-pla-dna-anti-counterfeiting-black
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349165323

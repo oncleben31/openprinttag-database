@@ -1,0 +1,10 @@
+slug: arianeplast-pla-pha-black-1000-spool
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/5288-pla-pha-black-1kg-175mm-filament-impression-3d-3760349168317.html
+material:
+  slug: arianeplast-pla-pha-black
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349168317

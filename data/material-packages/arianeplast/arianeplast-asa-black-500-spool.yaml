@@ -1,0 +1,11 @@
+slug: arianeplast-asa-black-500-spool
+brand_specific_id: F-ASA-noir
+class: FFF
+url: https://www.arianeplast.com/en/asa-format-500-g/183-asa-anti-uv-noir-3d-filament-arianeplast-500g.html
+material:
+  slug: arianeplast-asa-black
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750
+gtin: 3770006552748

@@ -1,0 +1,10 @@
+slug: arianeplast-petg-blue-8000-spool
+brand_specific_id: FPETGBF
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/802-petg-bleu-france-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-blue
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 2850

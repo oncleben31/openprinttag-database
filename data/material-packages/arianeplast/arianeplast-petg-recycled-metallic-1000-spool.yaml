@@ -1,0 +1,11 @@
+slug: arianeplast-petg-recycled-metallic-1000-spool
+brand_specific_id: packpetgr
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-recycle/2549-pack-10x-1kg-petg-recycle-couleur-metallise-filament-175mm-3760349166917.html
+material:
+  slug: arianeplast-petg-recycled-metallic
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166917

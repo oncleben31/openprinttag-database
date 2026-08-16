@@ -1,0 +1,11 @@
+uuid: 6950d98b-4cf4-5f0d-94e2-508883eca4d9
+slug: arianeplast-pla-green-translucent
+brand:
+  slug: arianeplast
+name: PLA Green Translucent
+class: FFF
+type: PLA
+abbreviation: PLA
+tags:
+- industrially_compostable
+properties: {}

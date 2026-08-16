@@ -1,0 +1,10 @@
+slug: arianeplast-pla-rose-translucide-8000-spool
+brand_specific_id: F-PLAROZFUTRANSL8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2756-pla-rose-translucide-3d-filament-arianeplast-fabrique-en-france-8kg.html
+material:
+  slug: arianeplast-pla-rose-translucide
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

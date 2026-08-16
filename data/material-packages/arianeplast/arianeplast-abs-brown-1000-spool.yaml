@@ -1,0 +1,11 @@
+slug: arianeplast-abs-brown-1000-spool
+brand_specific_id: F-ABSB-MARRON
+class: FFF
+url: https://www.arianeplast.com/en/abs-format-1kg/158-abs-basic-marron.html
+material:
+  slug: arianeplast-abs-brown
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276360730

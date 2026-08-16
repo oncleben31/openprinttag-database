@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-yellow-fluorescent-neon-500-spool
+brand_specific_id: G20-TPU95AJNFLU
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2434-filament-tpu-95a-jaune-fluo-175mm.html
+material:
+  slug: arianeplast-tpu-yellow-fluorescent-neon
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

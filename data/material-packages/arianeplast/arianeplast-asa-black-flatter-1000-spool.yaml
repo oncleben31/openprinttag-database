@@ -1,0 +1,11 @@
+slug: arianeplast-asa-black-flatter-1000-spool
+brand_specific_id: F-ASA-noir
+class: FFF
+url: https://www.arianeplast.com/en/asa-format-1-kg/182-asa-anti-uv-noir-3d-flament-arianeplast-1kg.html
+material:
+  slug: arianeplast-asa-black-flatter
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770006552779

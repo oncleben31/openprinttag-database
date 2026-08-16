@@ -1,0 +1,11 @@
+slug: arianeplast-pla-sky-1000-spool
+brand_specific_id: F-4043D-CIEL
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/152-pla-ciel-4043d-3d-filament-arianeplast-1kg-fabrique-en-france-.html
+material:
+  slug: arianeplast-pla-sky
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770006552359

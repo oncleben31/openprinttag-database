@@ -1,0 +1,11 @@
+slug: arianeplast-pla-silk-black-8000-spool
+brand_specific_id: F-PLASILKNOIR8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2651-pla-silk-noir-3d-filament-8kg-fabrique-en-france-arianeplast.html
+material:
+  slug: arianeplast-pla-silk-black
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760349163886

@@ -1,0 +1,10 @@
+slug: arianeplast-petg-navy-blue-1000-spool
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/5303-navy-blue-petg-1kg-175mm-3d-filament-france.html
+material:
+  slug: arianeplast-petg-navy-blue
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349168621

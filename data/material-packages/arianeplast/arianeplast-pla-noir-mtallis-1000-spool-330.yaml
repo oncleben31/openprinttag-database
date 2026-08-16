@@ -1,0 +1,11 @@
+slug: arianeplast-pla-noir-mtallis-1000-spool-330
+brand_specific_id: F-PLANOITMET1
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/330-pla-noir-metallise-3d-filament-arianeplast-1kg-fabrique-en-france-.html
+material:
+  slug: arianeplast-pla-noir-mtallis
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770006552878

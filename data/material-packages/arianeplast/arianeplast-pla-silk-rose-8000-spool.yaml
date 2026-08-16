@@ -1,0 +1,11 @@
+slug: arianeplast-pla-silk-rose-8000-spool
+brand_specific_id: F-PLASILKROSE8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2650-pla-silk-rose-3d-filament-8kg-fabrique-en-francearianeplast.html
+material:
+  slug: arianeplast-pla-silk-rose
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760349163909

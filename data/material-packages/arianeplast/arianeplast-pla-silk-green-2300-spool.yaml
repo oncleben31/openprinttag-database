@@ -1,0 +1,10 @@
+slug: arianeplast-pla-silk-green-2300-spool
+brand_specific_id: F-PLASILKVERT2
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-23kg/2666-filament-3d-pla-silk-vert-arianeplast-23kg-.html
+material:
+  slug: arianeplast-pla-silk-green
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

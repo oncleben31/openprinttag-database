@@ -1,0 +1,11 @@
+slug: arianeplast-abs-red-signalling-2000-spool
+brand_specific_id: F-ABSBASIC-ROUGE
+class: FFF
+url: https://www.arianeplast.com/en/abs-format-2kg/189-abs-rouge-ral3020-2kg.html
+material:
+  slug: arianeplast-abs-red-signalling
+nominal_netto_full_weight: 2000
+container:
+  slug: 2000g
+filament_diameter: 1750
+gtin: 3760349160165

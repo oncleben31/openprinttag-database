@@ -1,0 +1,11 @@
+slug: arianeplast-pla-green-apple-1000-spool
+brand_specific_id: F-PLA VERT POM
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/299-pla-vert-pomme-3d-filament-arianeplast-fabrique-en-france-1kg.html
+material:
+  slug: arianeplast-pla-green-apple
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770006552670

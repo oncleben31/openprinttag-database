@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-white-500-spool-2040
+brand_specific_id: F-TPU85ABLANC
+class: FFF
+url: https://www.arianeplast.com/en/tpu-shore-85a/2040-filament-tpu-85a-blanc-175mm.html
+material:
+  slug: arianeplast-tpu-white
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

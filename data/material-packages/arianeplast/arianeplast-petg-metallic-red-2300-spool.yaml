@@ -1,0 +1,10 @@
+slug: arianeplast-petg-metallic-red-2300-spool
+brand_specific_id: FPETGROUGEMET
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/2588-petg-3d-filament-arianeplast-175mm-fabrique-en-france-rouge-metallise-3760349163152.html
+material:
+  slug: arianeplast-petg-metallic-red
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

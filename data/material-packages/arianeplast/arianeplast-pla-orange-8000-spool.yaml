@@ -1,0 +1,11 @@
+slug: arianeplast-pla-orange-8000-spool
+brand_specific_id: F-PLAOrange8kg
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/826-bobine-fil-3d-pla-orange-3d-filament-arianeplast-8kg.html
+material:
+  slug: arianeplast-pla-orange
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760276362772

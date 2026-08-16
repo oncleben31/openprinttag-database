@@ -1,0 +1,11 @@
+slug: arianeplast-pla-purple-1000-spool-5170
+brand_specific_id: REFPLAPURPLE
+class: FFF
+url: https://www.arianeplast.com/en/refill-pla/5170-refill-pla-purple-1kg-175mm-filament-3d.html
+material:
+  slug: arianeplast-pla-purple
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166252

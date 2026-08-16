@@ -1,0 +1,11 @@
+slug: arianeplast-pla-gray-8000-spool
+brand_specific_id: F-4043D-gris
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/812-bobine-pla-gris-8kg-fil-pour-imprimante-3d-marque-arianeplast.html
+material:
+  slug: arianeplast-pla-gray
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760276362468

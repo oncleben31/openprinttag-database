@@ -1,0 +1,11 @@
+slug: arianeplast-pla-bluegrey-8000-spool
+brand_specific_id: FPLABG8kg
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/829-pla-bleugris-4043d-3d-filament-arianeplast-8kg-fabrique-en-france-.html
+material:
+  slug: arianeplast-pla-bluegrey
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750
+gtin: 3760349161707

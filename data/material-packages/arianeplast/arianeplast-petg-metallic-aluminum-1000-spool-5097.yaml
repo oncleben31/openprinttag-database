@@ -1,0 +1,10 @@
+slug: arianeplast-petg-metallic-aluminum-1000-spool-5097
+class: FFF
+url: https://www.arianeplast.com/en/refill-petg/5097-refill-petg-aluminium-metallise-1kg-175mm.html
+material:
+  slug: arianeplast-petg-metallic-aluminum
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166344

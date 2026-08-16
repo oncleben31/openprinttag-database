@@ -1,0 +1,11 @@
+slug: arianeplast-pla-green-metal-metallic-1000-spool
+brand_specific_id: REFPLAVERMET
+class: FFF
+url: https://www.arianeplast.com/en/refill-pla/5172-refill-pla-vert-metal-1kg-175mm-filament-3d.html
+material:
+  slug: arianeplast-pla-green-metal-metallic
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349162452

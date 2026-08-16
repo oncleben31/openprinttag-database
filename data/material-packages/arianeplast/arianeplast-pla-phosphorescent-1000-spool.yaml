@@ -1,0 +1,11 @@
+slug: arianeplast-pla-phosphorescent-1000-spool
+brand_specific_id: A-PLAPHOSPO1
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/2795-pla-phosphorescent-3d-filament-arianeplast-1kg-fabrique-en-france-175mm-3760349165729.html
+material:
+  slug: arianeplast-pla-phosphorescent
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349165729

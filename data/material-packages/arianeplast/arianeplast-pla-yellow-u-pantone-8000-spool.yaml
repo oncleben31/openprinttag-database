@@ -1,0 +1,10 @@
+slug: arianeplast-pla-yellow-u-pantone-8000-spool
+brand_specific_id: F-PLAJAUNELIEBH8
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/2640-pla-jaune-116u-de-la-celebre-marque-d-engins-de-chantier-pantone-3d-filament-arianeplast-175mm-fabrique-en-france-8kg.html
+material:
+  slug: arianeplast-pla-yellow-u-pantone
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

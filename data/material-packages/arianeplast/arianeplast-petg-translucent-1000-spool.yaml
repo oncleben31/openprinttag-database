@@ -1,0 +1,11 @@
+slug: arianeplast-petg-translucent-1000-spool
+brand_specific_id: FPETGTRAN
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/344-petg-translucide-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-translucent
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 2850
+gtin: 3770006552960

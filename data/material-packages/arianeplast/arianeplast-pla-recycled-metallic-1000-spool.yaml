@@ -1,0 +1,11 @@
+slug: arianeplast-pla-recycled-metallic-1000-spool
+brand_specific_id: packrpla
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-recycle/2548-pack-10x-1kg-pla-recycle-couleur-metallise-filament-175mm-3760349166900.html
+material:
+  slug: arianeplast-pla-recycled-metallic
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166900
