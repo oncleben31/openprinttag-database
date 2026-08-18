@@ -6,4 +6,8 @@ name: Nylon Carbon
 class: FFF
 type: PA6
 abbreviation: PA6
+tags:
+  - contains_carbon_fiber
+  - contains_carbon
+  - abrasive
 properties: {}

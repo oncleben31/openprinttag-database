@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5079-refill-pla-turquoise-1kg-175
 material:
   slug: arianeplast-pla-turquoise
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349162438

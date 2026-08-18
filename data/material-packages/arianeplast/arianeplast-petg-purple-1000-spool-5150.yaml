@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-petg/5150-refill-petg-violet-1kg-175m
 material:
   slug: arianeplast-petg-purple
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349166085

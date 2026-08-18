@@ -6,4 +6,6 @@ name: Kuraray Mowiflex Soluble
 class: FFF
 type: PVA
 abbreviation: PVA
+tags:
+  - water_soluble
 properties: {}

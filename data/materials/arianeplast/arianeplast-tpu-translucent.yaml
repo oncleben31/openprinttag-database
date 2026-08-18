@@ -6,4 +6,6 @@ name: TPU Translucent
 class: FFF
 type: TPU
 abbreviation: TPU
+tags:
+  - translucent
 properties: {}

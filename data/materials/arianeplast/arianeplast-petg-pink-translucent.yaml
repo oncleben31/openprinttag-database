@@ -6,4 +6,6 @@ name: PETG Pink Translucent
 class: FFF
 type: PETG
 abbreviation: PETG
+tags:
+  - translucent
 properties: {}

@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-abs/5201-refill-abs-jaune-fluo-900g-1
 material:
   slug: arianeplast-abs-yellow-fluorescent
 nominal_netto_full_weight: 900
-container:
-  slug: 900g
 filament_diameter: 1750
 gtin: 3760349167730

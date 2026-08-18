@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5189-refill-pla-violet-metal-1kg-
 material:
   slug: arianeplast-pla-metallic-purple
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760276363434

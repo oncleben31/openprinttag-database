@@ -6,4 +6,8 @@ name: PETG Carbon
 class: FFF
 type: PETG
 abbreviation: PETG
+tags:
+  - contains_carbon_fiber
+  - contains_carbon
+  - abrasive
 properties: {}

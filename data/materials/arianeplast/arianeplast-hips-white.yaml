@@ -6,4 +6,6 @@ name: HIPS White
 class: FFF
 type: HIPS
 abbreviation: HIPS
+tags:
+  - limonene_soluble
 properties: {}

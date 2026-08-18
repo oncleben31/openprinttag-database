@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5074-refill-pla-rouge-1kg-175mm.h
 material:
   slug: arianeplast-pla-red
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3770006552403

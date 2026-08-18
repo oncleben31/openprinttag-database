@@ -4,7 +4,5 @@ url: https://www.arianeplast.com/en/refill-petg/5262-refill-petg-dark-blue-1kg-1
 material:
   slug: arianeplast-petg-dark-blue
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349168140

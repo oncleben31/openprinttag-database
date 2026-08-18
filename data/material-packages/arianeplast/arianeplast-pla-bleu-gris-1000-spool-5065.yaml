@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5065-refill-pla-bleugris-1kg-175m
 material:
   slug: arianeplast-pla-bleu-gris
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760276363618

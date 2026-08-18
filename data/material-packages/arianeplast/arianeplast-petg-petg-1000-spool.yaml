@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-petg/5259-refill-petg-change-color-37
 material:
   slug: arianeplast-petg-petg
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349168263

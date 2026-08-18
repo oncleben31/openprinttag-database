@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5190-refill-pla-rose-metal-1kg-17
 material:
   slug: arianeplast-pla-pink-metal-metallic
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349162414

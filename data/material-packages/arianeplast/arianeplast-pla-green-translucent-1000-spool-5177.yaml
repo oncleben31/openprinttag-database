@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5177-refill-pla-vert-translucide-
 material:
   slug: arianeplast-pla-green-translucent
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349162476

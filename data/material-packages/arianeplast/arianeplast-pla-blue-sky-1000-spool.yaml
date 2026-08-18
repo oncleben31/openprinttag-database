@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5181-refill-pla-bleu-ciel-1kg-175
 material:
   slug: arianeplast-pla-blue-sky
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349162209

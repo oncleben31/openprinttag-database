@@ -5,7 +5,5 @@ url: https://www.arianeplast.com/en/refill-pla/5188-refill-pla-aluminium-metal-1
 material:
   slug: arianeplast-pla-aluminum-metal-metallic
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349166078

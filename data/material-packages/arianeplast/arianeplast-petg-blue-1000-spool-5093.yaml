@@ -4,7 +4,5 @@ url: https://www.arianeplast.com/en/refill-petg/5093-refill-petg-bleu-france-1kg
 material:
   slug: arianeplast-petg-blue
 nominal_netto_full_weight: 1000
-container:
-  slug: 1000g
 filament_diameter: 1750
 gtin: 3760349166306

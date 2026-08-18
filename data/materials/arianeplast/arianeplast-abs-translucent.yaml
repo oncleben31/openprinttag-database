@@ -6,4 +6,6 @@ name: ABS Translucent
 class: FFF
 type: ABS
 abbreviation: ABS
+tags:
+  - translucent
 properties: {}
