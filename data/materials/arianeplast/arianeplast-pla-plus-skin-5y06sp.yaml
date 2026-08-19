@@ -1,0 +1,13 @@
+uuid: 84e7a7ed-796c-48c5-8f08-02c4a805fe97
+slug: arianeplast-pla-plus-skin-5y06sp
+brand:
+  slug: arianeplast
+name: PLA+ Skin 5Y06SP
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#e2c077ff'
+tags:
+- industrially_compostable
+properties: {}

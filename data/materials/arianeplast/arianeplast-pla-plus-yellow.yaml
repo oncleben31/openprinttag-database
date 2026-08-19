@@ -1,0 +1,13 @@
+uuid: 0fcae292-e021-4fb9-9cf0-98966e386a26
+slug: arianeplast-pla-plus-yellow
+brand:
+  slug: arianeplast
+name: PLA+ yellow
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#fbf942ff'
+tags:
+- industrially_compostable
+properties: {}

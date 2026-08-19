@@ -1,0 +1,13 @@
+uuid: 51f08bf3-4d4e-4971-9749-93bc0dd5f08c
+slug: arianeplast-pla-plus-blue
+brand:
+  slug: arianeplast
+name: PLA+ Blue
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#8ed9f9ff'
+tags:
+- industrially_compostable
+properties: {}

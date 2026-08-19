@@ -1,0 +1,13 @@
+uuid: af723890-9ac5-488a-85b0-6bca75c7f4a8
+slug: arianeplast-pla-plus-yellow-ocher
+brand:
+  slug: arianeplast
+name: PLA+ Yellow Ocher
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#ffb031ff'
+tags:
+- industrially_compostable
+properties: {}

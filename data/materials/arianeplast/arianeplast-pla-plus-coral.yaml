@@ -1,0 +1,13 @@
+uuid: a30b23c8-a01d-4303-9d95-73e6e693a193
+slug: arianeplast-pla-plus-coral
+brand:
+  slug: arianeplast
+name: PLA+ Coral
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#f47d59ff'
+tags:
+- industrially_compostable
+properties: {}

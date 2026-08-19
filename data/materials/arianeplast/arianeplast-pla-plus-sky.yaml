@@ -1,0 +1,13 @@
+uuid: 0a3f3676-433a-410b-8455-69a2378decfc
+slug: arianeplast-pla-plus-sky
+brand:
+  slug: arianeplast
+name: PLA+ Sky
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#0099e6ff'
+tags:
+- industrially_compostable
+properties: {}

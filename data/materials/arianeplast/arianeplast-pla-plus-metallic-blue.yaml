@@ -1,0 +1,13 @@
+uuid: a3602441-5ca0-4c93-8f31-ad6f1067f12b
+slug: arianeplast-pla-plus-metallic-blue
+brand:
+  slug: arianeplast
+name: PLA+ Metallic blue
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#40b6e4ff'
+tags:
+- industrially_compostable
+properties: {}

@@ -1,0 +1,13 @@
+uuid: 8b13d89d-05a3-47de-ae9c-defd7641022c
+slug: arianeplast-pla-plus-metallic-aluminum
+brand:
+  slug: arianeplast
+name: PLA+ Metallic Aluminum
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#aeb8c1ff'
+tags:
+- industrially_compostable
+properties: {}

@@ -1,0 +1,13 @@
+uuid: a1143a65-0341-4a72-b2db-54cc56d49dd8
+slug: arianeplast-pla-plus-yellow-pantone-116u
+brand:
+  slug: arianeplast
+name: PLA+ Yellow Pantone 116U
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#e8bd00ff'
+tags:
+- industrially_compostable
+properties: {}

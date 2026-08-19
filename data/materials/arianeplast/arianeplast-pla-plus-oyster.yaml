@@ -1,0 +1,13 @@
+uuid: 87e75624-8b7f-4d20-8ddb-0c6652ea664d
+slug: arianeplast-pla-plus-oyster
+brand:
+  slug: arianeplast
+name: PLA+ Oyster
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#efe8d8ff'
+tags:
+- industrially_compostable
+properties: {}

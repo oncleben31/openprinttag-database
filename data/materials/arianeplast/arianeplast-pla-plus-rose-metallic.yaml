@@ -1,0 +1,13 @@
+uuid: cb7be215-2d4f-483d-99a6-bdf5ce8225e8
+slug: arianeplast-pla-plus-rose-metallic
+brand:
+  slug: arianeplast
+name: PLA+ Rose Metallic
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#b13566ff'
+tags:
+- industrially_compostable
+properties: {}

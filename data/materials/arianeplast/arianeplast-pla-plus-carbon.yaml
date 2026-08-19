@@ -1,0 +1,14 @@
+uuid: eb16432e-dfc6-444b-9b1b-f1323b8f15b9
+slug: arianeplast-pla-plus-carbon
+brand:
+  slug: arianeplast
+name: PLA+ Carbon
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#45444aff'
+tags:
+- contains_carbon_fiber
+- abrasive
+properties: {}

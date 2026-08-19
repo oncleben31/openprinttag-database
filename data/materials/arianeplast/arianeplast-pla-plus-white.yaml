@@ -1,0 +1,13 @@
+uuid: b6fb2b00-9124-4171-9cb9-2d0fc2c3b060
+slug: arianeplast-pla-plus-white
+brand:
+  slug: arianeplast
+name: PLA+ White
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#efefefff'
+tags:
+- industrially_compostable
+properties: {}

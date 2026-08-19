@@ -1,0 +1,14 @@
+uuid: d67444d5-2f4f-4b77-b398-499c30c58304
+slug: arianeplast-pla-plus-translucent-bottle-green
+brand:
+  slug: arianeplast
+name: PLA+ Translucent Bottle Green
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#41a840ff'
+tags:
+- translucent
+- industrially_compostable
+properties: {}

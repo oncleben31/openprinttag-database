@@ -1,0 +1,13 @@
+uuid: 9173fd52-70ad-401c-b50f-51a1649856ef
+slug: arianeplast-pla-plus-skin-2r15sp
+brand:
+  slug: arianeplast
+name: PLA+ Skin 2R15SP
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#55331aff'
+tags:
+- industrially_compostable
+properties: {}

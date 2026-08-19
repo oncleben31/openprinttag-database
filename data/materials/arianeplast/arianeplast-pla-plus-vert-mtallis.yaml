@@ -1,0 +1,13 @@
+uuid: 79a7c8d7-879b-45cb-9dc6-dbc49c8c72f2
+slug: arianeplast-pla-plus-vert-mtallis
+brand:
+  slug: arianeplast
+name: "PLA+ vert m\xE9tallis\xE9"
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#bbdb4bff'
+tags:
+- industrially_compostable
+properties: {}

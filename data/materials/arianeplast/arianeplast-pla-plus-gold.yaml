@@ -1,0 +1,13 @@
+uuid: 62821e8b-47e9-4af7-8f94-53b525176072
+slug: arianeplast-pla-plus-gold
+brand:
+  slug: arianeplast
+name: PLA+ Gold
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#a6884cff'
+tags:
+- industrially_compostable
+properties: {}

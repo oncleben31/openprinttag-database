@@ -1,0 +1,13 @@
+uuid: 6a095610-d743-4207-8a24-c39f21852be7
+slug: arianeplast-pla-plus-ultra-violet-pantone-5f4b8b
+brand:
+  slug: arianeplast
+name: PLA+ Ultra Violet Pantone 5F4B8B
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#6459ebff'
+tags:
+- industrially_compostable
+properties: {}

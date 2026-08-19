@@ -1,0 +1,13 @@
+uuid: 897b60d6-86c3-4b63-9cbf-bb9f039880d4
+slug: arianeplast-pla-plus-skin-3y09sp
+brand:
+  slug: arianeplast
+name: PLA+ Skin 3Y09SP
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#e2c077ff'
+tags:
+- industrially_compostable
+properties: {}

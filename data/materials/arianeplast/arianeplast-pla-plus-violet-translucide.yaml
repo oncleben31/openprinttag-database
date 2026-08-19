@@ -1,0 +1,14 @@
+uuid: febcfcdf-f5f8-431d-bfc7-576d644b1f87
+slug: arianeplast-pla-plus-violet-translucide
+brand:
+  slug: arianeplast
+name: PLA+ Violet translucide
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#6459ebff'
+tags:
+- translucent
+- industrially_compostable
+properties: {}

@@ -1,0 +1,13 @@
+uuid: e54a6116-c54f-44b2-b236-004e0367ba8b
+slug: arianeplast-pla-plus-brown
+brand:
+  slug: arianeplast
+name: PLA+ brown
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#9a491aff'
+tags:
+- industrially_compostable
+properties: {}

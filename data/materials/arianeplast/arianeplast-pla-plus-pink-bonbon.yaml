@@ -1,0 +1,13 @@
+uuid: f2cb0c4d-5322-4b7c-a0f0-89fa82deb2e2
+slug: arianeplast-pla-plus-pink-bonbon
+brand:
+  slug: arianeplast
+name: PLA+ Pink Bonbon
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#f0c7e7ff'
+tags:
+- industrially_compostable
+properties: {}

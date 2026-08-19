@@ -1,0 +1,13 @@
+uuid: e24847bf-3036-4f6a-acea-d5666631e650
+slug: arianeplast-pla-plus-bordeaux
+brand:
+  slug: arianeplast
+name: PLA+ Bordeaux
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#ce5d4cff'
+tags:
+- industrially_compostable
+properties: {}

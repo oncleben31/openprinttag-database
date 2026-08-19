@@ -1,0 +1,13 @@
+uuid: 10570c05-a34b-44c8-9d2b-7c0dc918bfda
+slug: arianeplast-pla-plus-rouge
+brand:
+  slug: arianeplast
+name: PLA+ rouge
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#e72f1dff'
+tags:
+- industrially_compostable
+properties: {}

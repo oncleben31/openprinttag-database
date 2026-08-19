@@ -1,0 +1,13 @@
+uuid: bc0cf628-c140-4ad3-9e0f-e468a2525435
+slug: arianeplast-pla-plus-noir
+brand:
+  slug: arianeplast
+name: PLA+ noir
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#000000ff'
+tags:
+- industrially_compostable
+properties: {}

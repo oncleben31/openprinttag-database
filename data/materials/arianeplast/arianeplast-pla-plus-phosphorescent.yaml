@@ -1,0 +1,15 @@
+uuid: af09121d-1377-4014-bdfb-b074413e1987
+slug: arianeplast-pla-plus-phosphorescent
+brand:
+  slug: arianeplast
+name: PLA+ Phosphorescent
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#62e480ff'
+tags:
+- glow_in_the_dark
+- abrasive
+- industrially_compostable
+properties: {}

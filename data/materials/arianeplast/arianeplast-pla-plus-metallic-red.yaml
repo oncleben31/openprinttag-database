@@ -1,0 +1,13 @@
+uuid: a747eda3-e098-43b8-b9d3-64fdfdfc8c4b
+slug: arianeplast-pla-plus-metallic-red
+brand:
+  slug: arianeplast
+name: PLA+ Metallic Red
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#bb5152ff'
+tags:
+- industrially_compostable
+properties: {}

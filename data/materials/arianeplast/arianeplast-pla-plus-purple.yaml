@@ -1,0 +1,13 @@
+uuid: 6edbcfbb-d1ca-4819-ae41-70d316efc45e
+slug: arianeplast-pla-plus-purple
+brand:
+  slug: arianeplast
+name: PLA+ Purple
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#8a68b5ff'
+tags:
+- industrially_compostable
+properties: {}

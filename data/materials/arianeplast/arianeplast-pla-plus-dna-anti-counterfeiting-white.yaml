@@ -1,0 +1,13 @@
+uuid: 2f75550c-beb1-402e-941c-331acef17103
+slug: arianeplast-pla-plus-dna-anti-counterfeiting-white
+brand:
+  slug: arianeplast
+name: PLA+ DNA Anti-counterfeiting White
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#f5f5f5ff'
+tags:
+- industrially_compostable
+properties: {}
