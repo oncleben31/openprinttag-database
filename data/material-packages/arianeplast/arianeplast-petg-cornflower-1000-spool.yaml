@@ -1,0 +1,11 @@
+slug: arianeplast-petg-cornflower-1000-spool
+brand_specific_id: FPETGBLEUET1
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/5307-cornflower-blue-petg-1kg-175mm-made-france-3760349168645.html
+material:
+  slug: arianeplast-petg-cornflower
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349168645

@@ -1,0 +1,10 @@
+slug: arianeplast-petg-red-safety-ral-8000-spool
+brand_specific_id: FPETGRGE
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/455-petg-rouge-securite-ral-3020-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-red-safety-ral
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

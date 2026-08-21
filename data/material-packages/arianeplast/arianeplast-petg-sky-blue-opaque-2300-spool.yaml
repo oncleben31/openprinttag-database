@@ -1,0 +1,10 @@
+slug: arianeplast-petg-sky-blue-opaque-2300-spool
+brand_specific_id: FPETGCIEL
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/458-petg-bleu-ciel-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-sky-blue-opaque
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

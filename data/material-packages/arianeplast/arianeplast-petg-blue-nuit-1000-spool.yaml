@@ -1,0 +1,11 @@
+slug: arianeplast-petg-blue-nuit-1000-spool
+brand_specific_id: FPETGBN
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/424-petg-bleu-nuit-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-blue-nuit
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770008753785

@@ -1,0 +1,11 @@
+slug: arianeplast-tpu-coral-pantone-1000-spool
+brand_specific_id: F-TPU95ACORAIL
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2573-filament-tpu-95a-corail-pantone-16-1546-175mm.html
+material:
+  slug: arianeplast-tpu-coral-pantone
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770008753594

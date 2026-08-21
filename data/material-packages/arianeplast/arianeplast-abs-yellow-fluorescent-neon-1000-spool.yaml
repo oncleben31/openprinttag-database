@@ -1,0 +1,11 @@
+slug: arianeplast-abs-yellow-fluorescent-neon-1000-spool
+brand_specific_id: F-ABSB-J-FLUO
+class: FFF
+url: https://www.arianeplast.com/en/abs-format-1kg/157-abs-basic-jaune-fluo.html
+material:
+  slug: arianeplast-abs-yellow-fluorescent-neon
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276360754

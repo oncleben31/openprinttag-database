@@ -1,0 +1,11 @@
+uuid: e6a0b283-9c02-590a-a63d-ca215adc36f0
+slug: arianeplast-pla-metallic-green
+brand:
+  slug: arianeplast
+name: PLA Metallic Green
+class: FFF
+type: PLA
+abbreviation: PLA
+tags:
+- industrially_compostable
+properties: {}

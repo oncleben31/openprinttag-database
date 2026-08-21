@@ -1,0 +1,11 @@
+slug: arianeplast-pva-soluble-290-spool
+brand_specific_id: G11-PVA029
+class: FFF
+url: https://www.arianeplast.com/en/support/443-filament-pva-soluble-290g-175mm.html
+material:
+  slug: arianeplast-pva-soluble
+nominal_netto_full_weight: 290
+container:
+  slug: 290g
+filament_diameter: 1750
+gtin: 3760349163046

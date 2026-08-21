@@ -1,0 +1,11 @@
+slug: arianeplast-pla-eco-black-1000-spool
+brand_specific_id: PACKECONOIR1
+class: FFF
+url: https://www.arianeplast.com/en/pla-eco-arianeplast/5218-pack-x10-pla-eco-noir-1kg-175mm.html
+material:
+  slug: arianeplast-pla-eco-black
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276363762

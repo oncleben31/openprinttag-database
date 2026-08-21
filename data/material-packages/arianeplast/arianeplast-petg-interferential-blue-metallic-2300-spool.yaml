@@ -1,0 +1,10 @@
+slug: arianeplast-petg-interferential-blue-metallic-2300-spool
+brand_specific_id: FPETGBINTER
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/2564-petg-bleu-interferentiel-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-interferential-blue-metallic
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

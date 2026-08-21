@@ -1,0 +1,11 @@
+slug: arianeplast-petg-white-1000-spool
+brand_specific_id: FPETGBLANC
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/422-petg-blanc-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-white
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 2850
+gtin: 3760276360174

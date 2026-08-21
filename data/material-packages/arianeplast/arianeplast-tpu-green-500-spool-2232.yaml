@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-green-500-spool-2232
+brand_specific_id: G15-TPU85AVERT
+class: FFF
+url: https://www.arianeplast.com/en/tpu-shore-85a/2232-filament-tpu-85a-vert-175mm.html
+material:
+  slug: arianeplast-tpu-green
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

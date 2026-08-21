@@ -1,0 +1,10 @@
+slug: arianeplast-pla-metallic-blue-2-8000-spool
+brand_specific_id: FPLABLEUMET8175
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-8kg/5224-pla-bleu-metallise-8kg-175mm-filament-3d.html
+material:
+  slug: arianeplast-pla-metallic-blue-2
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

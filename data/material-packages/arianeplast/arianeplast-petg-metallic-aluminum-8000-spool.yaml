@@ -1,0 +1,10 @@
+slug: arianeplast-petg-metallic-aluminum-8000-spool
+brand_specific_id: FPETGALU
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/457-petg-aluminium-metallise-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-metallic-aluminum
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

@@ -1,0 +1,11 @@
+slug: arianeplast-hips-white-750-spool
+brand_specific_id: F-HIPS
+class: FFF
+url: https://www.arianeplast.com/en/support/252-hips-arianeplast.html
+material:
+  slug: arianeplast-hips-white
+nominal_netto_full_weight: 750
+container:
+  slug: 750g
+filament_diameter: 2850
+gtin: 3760276360921

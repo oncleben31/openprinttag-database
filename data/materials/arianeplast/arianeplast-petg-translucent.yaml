@@ -1,0 +1,11 @@
+uuid: 3aad96fc-b323-519e-ba9c-396d1194a440
+slug: arianeplast-petg-translucent
+brand:
+  slug: arianeplast
+name: PETG Translucent
+class: FFF
+type: PETG
+abbreviation: PETG
+tags:
+  - translucent
+properties: {}

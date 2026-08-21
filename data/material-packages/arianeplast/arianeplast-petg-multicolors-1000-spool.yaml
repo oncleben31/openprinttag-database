@@ -1,0 +1,11 @@
+slug: arianeplast-petg-multicolors-1000-spool
+brand_specific_id: F-PETGCG
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/2675-pack-de-5-x-1kg-de-petg-change-color-3760349166870.html
+material:
+  slug: arianeplast-petg-multicolors
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760349166870

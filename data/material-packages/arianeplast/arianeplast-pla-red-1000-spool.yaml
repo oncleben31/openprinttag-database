@@ -1,0 +1,11 @@
+slug: arianeplast-pla-red-1000-spool
+brand_specific_id: INGEO-3D870-ROUGE
+class: FFF
+url: https://www.arianeplast.com/en/ingeo-3d870/1732-pla-ingeo-3d870-rouge-175mm-qualite-professionnelle.html
+material:
+  slug: arianeplast-pla-red
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276363502

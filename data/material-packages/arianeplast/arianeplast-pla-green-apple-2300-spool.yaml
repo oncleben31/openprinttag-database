@@ -1,0 +1,11 @@
+slug: arianeplast-pla-green-apple-2300-spool
+brand_specific_id: F-PLAVERTPOM2
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-23kg/301-pla-vert-pomme-3d-filament-arianeplast-fabrique-en-france-23kg.html
+material:
+  slug: arianeplast-pla-green-apple
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750
+gtin: 3770008753709

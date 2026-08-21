@@ -1,0 +1,11 @@
+slug: arianeplast-pla-beige-1000-spool
+brand_specific_id: INGEO-3D450
+class: FFF
+url: https://www.arianeplast.com/en/support/808-ingeo-3d450-175mm-arianeplast-3d-filament-fabrique-en-france.html
+material:
+  slug: arianeplast-pla-beige
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 2850
+gtin: 3760276362376

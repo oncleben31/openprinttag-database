@@ -1,0 +1,10 @@
+slug: arianeplast-pla-ochre-metallic-2300-spool
+brand_specific_id: F-PLAOCRMET2
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-23kg/2606-pla-ocre-metallise-3d-filament-23kg-fabrique-en-france-arianeplast.html
+material:
+  slug: arianeplast-pla-ochre-metallic
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

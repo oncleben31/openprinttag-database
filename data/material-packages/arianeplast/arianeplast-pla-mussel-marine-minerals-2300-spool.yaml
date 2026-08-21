@@ -1,0 +1,10 @@
+slug: arianeplast-pla-mussel-marine-minerals-2300-spool
+brand_specific_id: F-PLAMOULE2
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-23kg/2610-pla-moule-3d-filament-arianeplast-175mm-fabrique-en-france-23kg.html
+material:
+  slug: arianeplast-pla-mussel-marine-minerals
+nominal_netto_full_weight: 2300
+container:
+  slug: 2300g
+filament_diameter: 1750

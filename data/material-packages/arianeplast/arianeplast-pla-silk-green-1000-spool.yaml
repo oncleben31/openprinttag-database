@@ -1,0 +1,11 @@
+slug: arianeplast-pla-silk-green-1000-spool
+brand_specific_id: C28-PLASILKVERT1
+class: FFF
+url: https://www.arianeplast.com/en/pla-format-1-kg/2665-filament-3d-pla-silk-vert-arianeplast.html
+material:
+  slug: arianeplast-pla-silk-green
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276362857

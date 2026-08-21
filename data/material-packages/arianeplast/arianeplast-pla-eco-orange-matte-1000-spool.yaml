@@ -1,0 +1,11 @@
+slug: arianeplast-pla-eco-orange-matte-1000-spool
+brand_specific_id: ECO ORANGE
+class: FFF
+url: https://www.arianeplast.com/en/pla-eco-arianeplast/1654-pla-eco-orange-175mm-1kg-3760276363830.html
+material:
+  slug: arianeplast-pla-eco-orange-matte
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276363830

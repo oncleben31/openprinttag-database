@@ -1,0 +1,11 @@
+uuid: 1b2f57fd-4ff0-5bd3-b926-0826cd61d840
+slug: arianeplast-pla-recycled-metallic
+brand:
+  slug: arianeplast
+name: PLA Recycled Metallic
+class: FFF
+type: PLA
+abbreviation: PLA
+tags:
+- industrially_compostable
+properties: {}

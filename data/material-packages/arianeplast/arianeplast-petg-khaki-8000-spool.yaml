@@ -1,0 +1,10 @@
+slug: arianeplast-petg-khaki-8000-spool
+brand_specific_id: FPETGKAK
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-petg/463-petg-kaki-3d-filament-arianeplast-fabrique-en-france.html
+material:
+  slug: arianeplast-petg-khaki
+nominal_netto_full_weight: 8000
+container:
+  slug: 8000g
+filament_diameter: 1750

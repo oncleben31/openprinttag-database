@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-purple-500-spool-2044
+brand_specific_id: F-TPU85AVIO
+class: FFF
+url: https://www.arianeplast.com/en/tpu-shore-85a/2044-filament-tpu-85a-violet-175mm.html
+material:
+  slug: arianeplast-tpu-purple
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

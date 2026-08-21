@@ -1,0 +1,11 @@
+slug: arianeplast-tpu-purple-1000-spool
+brand_specific_id: G18-TPU95AVIO
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2441-filament-tpu-95a-violet-175mm.html
+material:
+  slug: arianeplast-tpu-purple
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770008753082

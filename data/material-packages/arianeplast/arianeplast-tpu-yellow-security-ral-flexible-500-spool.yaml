@@ -1,0 +1,10 @@
+slug: arianeplast-tpu-yellow-security-ral-flexible-500-spool
+brand_specific_id: G23-TPU95A1003
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/5137-tpu-95a-peau-3y09-sp-175mm-filament-3d-flexible.html
+material:
+  slug: arianeplast-tpu-yellow-security-ral-flexible
+nominal_netto_full_weight: 500
+container:
+  slug: 500g
+filament_diameter: 1750

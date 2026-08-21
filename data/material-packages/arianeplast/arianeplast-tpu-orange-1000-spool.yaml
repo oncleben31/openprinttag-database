@@ -1,0 +1,11 @@
+slug: arianeplast-tpu-orange-1000-spool
+brand_specific_id: G27-TPU95AORG
+class: FFF
+url: https://www.arianeplast.com/en/3d-filament-tpu-shore-95a/2435-filament-tpu-95a-orange-175mm.html
+material:
+  slug: arianeplast-tpu-orange
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3770006552588

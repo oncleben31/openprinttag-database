@@ -1,0 +1,11 @@
+slug: arianeplast-pva-soluble-1000-spool
+brand_specific_id: G11-PVA1
+class: FFF
+url: https://www.arianeplast.com/en/support/444-filament-pva-soluble-1kg-.html
+material:
+  slug: arianeplast-pva-soluble
+nominal_netto_full_weight: 1000
+container:
+  slug: 1000g
+filament_diameter: 1750
+gtin: 3760276362086
