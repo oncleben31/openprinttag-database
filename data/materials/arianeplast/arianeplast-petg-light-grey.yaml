@@ -6,4 +6,5 @@ name: PETG Light Grey
 class: FFF
 type: PETG
 abbreviation: PETG
-properties: {}
+properties:
+  density: 1.27

@@ -7,5 +7,6 @@ class: FFF
 type: TPU
 abbreviation: TPU
 tags:
-  - translucent
-properties: {}
+- translucent
+properties:
+  density: 1.15

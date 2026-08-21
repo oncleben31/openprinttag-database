@@ -11,4 +11,5 @@ primary_color:
   color_rgba: '#06b100ff'
 tags:
 - industrially_compostable
-properties: {}
+properties:
+  density: 1.24

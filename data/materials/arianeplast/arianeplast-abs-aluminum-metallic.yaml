@@ -6,4 +6,5 @@ name: ABS Aluminum Metallic
 class: FFF
 type: ABS
 abbreviation: ABS
-properties: {}
+properties:
+  density: 1.04

@@ -6,4 +6,5 @@ name: ASA Black
 class: FFF
 type: ASA
 abbreviation: ASA
-properties: {}
+properties:
+  density: 1.06

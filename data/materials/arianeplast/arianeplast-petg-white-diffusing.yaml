@@ -6,4 +6,5 @@ name: PETG White Diffusing
 class: FFF
 type: PETG
 abbreviation: PETG
-properties: {}
+properties:
+  density: 1.27

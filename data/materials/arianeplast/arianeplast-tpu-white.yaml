@@ -6,4 +6,5 @@ name: TPU White
 class: FFF
 type: TPU
 abbreviation: TPU
-properties: {}
+properties:
+  density: 1.15

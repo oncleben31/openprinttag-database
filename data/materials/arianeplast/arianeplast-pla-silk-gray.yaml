@@ -12,4 +12,5 @@ primary_color:
 tags:
 - silk
 - industrially_compostable
-properties: {}
+properties:
+  density: 1.24

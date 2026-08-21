@@ -8,4 +8,5 @@ type: PLA
 abbreviation: PLA
 tags:
 - industrially_compostable
-properties: {}
+properties:
+  density: 1.24

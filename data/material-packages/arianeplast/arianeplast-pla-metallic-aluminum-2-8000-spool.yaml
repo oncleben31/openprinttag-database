@@ -1,9 +1,9 @@
-slug: arianeplast-pla-metallic-aluminum-2-8000-spool
+slug: arianeplast-pla-metallic-aluminum-8000-spool
 brand_specific_id: F-PLAALU8kg
 class: FFF
 url: https://www.arianeplast.com/en/pla-format-8kg/823-bobine-fil-3d-grand-format-pla-aluminium-metallise-3d-filament-arianeplast-8kg-fabrique-en-france.html
 material:
-  slug: arianeplast-pla-metallic-aluminum-2
+  slug: arianeplast-pla-metallic-aluminum
 nominal_netto_full_weight: 8000
 container:
   slug: 8000g

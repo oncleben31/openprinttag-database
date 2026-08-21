@@ -10,6 +10,7 @@ url: https://www.arianeplast.com/en/filaments-carbone/2907-pla-carbone-8kg-3d-fi
 primary_color:
   color_rgba: '#45444aff'
 tags:
-  - contains_carbon_fiber
-  - abrasive
-properties: {}
+- contains_carbon_fiber
+- abrasive
+properties:
+  density: 1.24

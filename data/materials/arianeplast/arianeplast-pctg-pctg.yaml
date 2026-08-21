@@ -6,4 +6,5 @@ name: PCTG PCTG
 class: FFF
 type: PCTG
 abbreviation: PCTG
-properties: {}
+properties:
+  density: 1.23

@@ -6,4 +6,5 @@ name: PETG Pink Funky
 class: FFF
 type: PETG
 abbreviation: PETG
-properties: {}
+properties:
+  density: 1.27

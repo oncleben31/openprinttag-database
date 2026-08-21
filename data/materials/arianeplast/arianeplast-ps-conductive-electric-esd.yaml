@@ -6,4 +6,5 @@ name: PS Conductive Electric ESD
 class: FFF
 type: PS
 abbreviation: PS
-properties: {}
+properties:
+  density: 1.05

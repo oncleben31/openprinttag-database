@@ -6,4 +6,5 @@ name: TPU Green
 class: FFF
 type: TPU
 abbreviation: TPU
-properties: {}
+properties:
+  density: 1.15

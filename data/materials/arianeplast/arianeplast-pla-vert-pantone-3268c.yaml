@@ -11,4 +11,7 @@ primary_color:
   color_rgba: '#98fbcbff'
 tags:
 - industrially_compostable
-properties: {}
+properties:
+  density: 1.24
+  min_print_temperature: 200
+  max_print_temperature: 230

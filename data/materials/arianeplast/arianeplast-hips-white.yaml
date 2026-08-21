@@ -7,5 +7,6 @@ class: FFF
 type: HIPS
 abbreviation: HIPS
 tags:
-  - limonene_soluble
-properties: {}
+- limonene_soluble
+properties:
+  density: 1.03

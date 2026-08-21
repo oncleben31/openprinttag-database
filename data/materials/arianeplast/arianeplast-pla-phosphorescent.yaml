@@ -13,4 +13,5 @@ tags:
 - glow_in_the_dark
 - abrasive
 - industrially_compostable
-properties: {}
+properties:
+  density: 1.24

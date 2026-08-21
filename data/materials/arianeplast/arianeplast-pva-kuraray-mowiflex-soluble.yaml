@@ -8,4 +8,5 @@ type: PVA
 abbreviation: PVA
 tags:
 - water_soluble
-properties: {}
+properties:
+  density: 1.23

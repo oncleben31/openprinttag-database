@@ -6,4 +6,5 @@ name: ABS Yellow Fluorescent Neon
 class: FFF
 type: ABS
 abbreviation: ABS
-properties: {}
+properties:
+  density: 1.04

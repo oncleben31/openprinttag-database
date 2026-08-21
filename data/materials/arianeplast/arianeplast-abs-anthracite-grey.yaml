@@ -6,4 +6,5 @@ name: ABS Anthracite Grey
 class: FFF
 type: ABS
 abbreviation: ABS
-properties: {}
+properties:
+  density: 1.04
