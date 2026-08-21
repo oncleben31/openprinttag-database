@@ -11,5 +11,10 @@ primary_color:
   color_rgba: '#0066d9ff'
 tags:
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24

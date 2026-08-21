@@ -10,7 +10,11 @@ url: https://www.arianeplast.com/en/pla-format-8kg/2652-pla-silk-bleu-3d-filamen
 primary_color:
   color_rgba: '#0099e6ff'
 tags:
-- silk
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24

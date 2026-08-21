@@ -10,7 +10,10 @@ url: https://www.arianeplast.com/fr/pla-format-23kg/1984-465-pla-vert-fluo-23kg-
 primary_color:
   color_rgba: '#69ee00ff'
 tags:
-- neon
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
 properties:
   density: 1.24

@@ -12,5 +12,10 @@ primary_color:
 tags:
 - translucent
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- glow_in_the_dark
 properties:
   density: 1.24

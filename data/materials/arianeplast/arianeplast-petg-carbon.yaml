@@ -8,7 +8,6 @@ type: PETG
 abbreviation: PETG
 tags:
 - contains_carbon_fiber
-- contains_carbon
 - abrasive
 properties:
   density: 1.27

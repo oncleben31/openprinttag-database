@@ -8,3 +8,5 @@ type: PETG
 abbreviation: PETG
 properties:
   density: 1.27
+tags:
+- contains_ptfe

@@ -12,5 +12,11 @@ primary_color:
 tags:
 - conductive
 - industrially_compostable
+- abrasive
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24

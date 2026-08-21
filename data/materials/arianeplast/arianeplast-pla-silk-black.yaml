@@ -10,7 +10,11 @@ url: https://www.arianeplast.com/en/pla-format-8kg/2651-pla-silk-noir-3d-filamen
 primary_color:
   color_rgba: '#545252ff'
 tags:
-- silk
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24

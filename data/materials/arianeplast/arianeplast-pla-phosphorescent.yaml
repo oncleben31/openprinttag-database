@@ -13,5 +13,10 @@ tags:
 - glow_in_the_dark
 - abrasive
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24

@@ -8,5 +8,7 @@ type: PLA
 abbreviation: PLA
 tags:
 - industrially_compostable
+- contains_metal
+- recycled
 properties:
   density: 1.24

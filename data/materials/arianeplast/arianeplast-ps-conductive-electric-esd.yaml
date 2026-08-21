@@ -8,3 +8,6 @@ type: PS
 abbreviation: PS
 properties:
   density: 1.05
+tags:
+- esd_safe
+- conductive

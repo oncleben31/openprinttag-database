@@ -10,7 +10,11 @@ url: https://www.arianeplast.com/en/pla-format-8kg/2921-pla-jaune-fluo-3d-filame
 primary_color:
   color_rgba: '#e4ff33ff'
 tags:
-- neon
 - industrially_compostable
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24

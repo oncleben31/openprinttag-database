@@ -8,3 +8,5 @@ type: ABS
 abbreviation: ABS
 properties:
   density: 1.04
+tags:
+- contains_metal

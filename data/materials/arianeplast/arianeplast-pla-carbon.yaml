@@ -12,5 +12,11 @@ primary_color:
 tags:
 - contains_carbon_fiber
 - abrasive
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
+- industrially_compostable
 properties:
   density: 1.24

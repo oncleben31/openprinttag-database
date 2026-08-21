@@ -11,6 +11,12 @@ primary_color:
   color_rgba: '#98fbcbff'
 tags:
 - industrially_compostable
+- biocompatible
+- esd_safe
+- contains_metal
+- contains_ptfe
+- contains_wood
+- translucent
 properties:
   density: 1.24
   min_print_temperature: 200
