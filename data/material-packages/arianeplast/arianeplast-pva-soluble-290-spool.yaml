@@ -6,6 +6,6 @@ material:
   slug: arianeplast-pva-soluble
 nominal_netto_full_weight: 290
 container:
-  slug: 290g
+  slug: arianeplast-290g
 filament_diameter: 1750
 gtin: 3760349163046
