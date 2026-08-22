@@ -9,3 +9,28 @@ abbreviation: ASA
 properties:
   density: 1.06
 brand_specific_id: F-ASA-noir
+specs:
+  print_temperature:
+    min: 240
+    max: 280
+  bed_temperature:
+    min: 110
+    max: 130
+  print_speed: 30
+  diameter_tolerance: 0.03
+  certifications:
+    - ROHS
+    - ISO
+    - ASTM
+    - MSDS
+    - Environment
+description: |-
+  3D technical filament Arianeplast ASA special anti-UV black color.
+  Specially designed for outdoor applications, it resists thermal amplitudes and UV rays that degrade the quality of plastics over time.
+  This material is quite fluid and very easy to use. It allows good layer adhesion as well as very good definition.
+  This material is mainly used in the automotive sector, or in industries that need to be able to certify their production over time.
+  The pigments used for coloring are also very high quality and stable certified over time.
+  This filament is produced in France in our workshops with blank material only.
+reference_links:
+  - https://www.arianeplast.com/en/asa-format-500-g/183-asa-anti-uv-noir-3d-filament-arianeplast-500g.html
+  - https://www.arianeplast.com/en/asa-format-2kg/194-asa-anti-uv-noir-3d-filament-arianeplast-2kg.html
