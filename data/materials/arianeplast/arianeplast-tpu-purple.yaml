@@ -8,3 +8,4 @@ type: TPU
 abbreviation: TPU
 properties:
   density: 1.15
+brand_specific_id: F-TPU85AVIO
