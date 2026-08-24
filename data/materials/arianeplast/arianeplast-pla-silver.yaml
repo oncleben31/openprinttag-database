@@ -2,6 +2,7 @@ uuid: dd21ab53-d541-5403-aa14-8f385e8ac915
 slug: arianeplast-pla-silver
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Silver
 class: FFF
 type: PLA

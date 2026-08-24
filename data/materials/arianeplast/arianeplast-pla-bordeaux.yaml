@@ -2,6 +2,7 @@ uuid: af4a209b-c257-51b5-9dad-99f0aae4f1f9
 slug: arianeplast-pla-bordeaux
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Bordeaux
 class: FFF
 type: PLA

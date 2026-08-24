@@ -1,8 +1,9 @@
 uuid: e4e9df06-d7cb-5453-9115-41870dc26eee
-slug: arianeplast-pla-noir
+slug: arianeplast-pla-black
 brand:
   slug: arianeplast
-name: PLA+ noir
+  name: Arianeplast
+name: PLA+ Black
 class: FFF
 type: PLA
 abbreviation: PLA

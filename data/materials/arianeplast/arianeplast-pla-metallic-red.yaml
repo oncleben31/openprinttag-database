@@ -1,14 +1,15 @@
-uuid: 71466590-85d6-5b48-b825-151112b25bb6
+uuid: 23ce3ae3-2bd1-5683-ab07-439b0283befa
 slug: arianeplast-pla-metallic-red
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Metallic Red
 class: FFF
 type: PLA
 abbreviation: PLA
-url: https://www.arianeplast.com/en/pla-format-8kg/825-bobine-fil-pla-rouge-metallise-3d-filament-arianeplast-8kg-fabrique-en-france.html
+url: https://www.arianeplast.com/en/pla-format-1-kg/284-pla-rouge-metallise-3d-filament-arianeplast-1kg-fabrique-en-france-.html
 primary_color:
-  color_rgba: '#bb5152ff'
+  color_rgba: '#e0493eff'
 tags:
 - industrially_compostable
 properties: {}

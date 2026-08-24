@@ -2,6 +2,7 @@ uuid: 0970a0fd-cea9-5e24-bf7a-aaa45c6bdfd0
 slug: arianeplast-pla-phosphorescent
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Phosphorescent
 class: FFF
 type: PLA

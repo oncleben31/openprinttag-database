@@ -1,8 +1,9 @@
 uuid: 89cc7b31-e0d2-5ae9-bd13-034fedacc7fe
-slug: arianeplast-grey-pla
+slug: arianeplast-pla-grey
 brand:
   slug: arianeplast
-name: Grey PLA+
+  name: Arianeplast
+name: PLA+ Grey
 class: FFF
 type: PLA
 abbreviation: PLA

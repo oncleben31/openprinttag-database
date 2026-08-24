@@ -2,6 +2,7 @@ uuid: 3ebf3d56-49c7-5555-9b73-d8b55a46a9c7
 slug: arianeplast-pla-safety-yellow
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Safety Yellow
 class: FFF
 type: PLA

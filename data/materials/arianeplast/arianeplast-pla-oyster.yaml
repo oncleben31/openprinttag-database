@@ -2,6 +2,7 @@ uuid: 8fd4b4ee-c6ce-5eb3-9125-d9199fecf70b
 slug: arianeplast-pla-oyster
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Oyster
 class: FFF
 type: PLA

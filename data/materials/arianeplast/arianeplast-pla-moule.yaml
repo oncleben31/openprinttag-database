@@ -2,6 +2,7 @@ uuid: f911d40f-1b42-5a43-9349-29f8978ff9af
 slug: arianeplast-pla-moule
 brand:
   slug: arianeplast
+  name: Arianeplast
 name: PLA+ Moule
 class: FFF
 type: PLA
