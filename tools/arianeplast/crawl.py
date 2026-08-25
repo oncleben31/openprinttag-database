@@ -1,21 +1,25 @@
 """Scope-limited crawler for arianeplast.com product pages.
 
-The crawl is deliberately narrow: it walks the category listings named on the
-command line (PLA only, by default), follows their pagination, and fetches the
-product pages found there. Nothing else on the site is touched — no blog, no
-cart, no account pages, no images.
+The list of product pages comes from the shop's own English sitemap rather than
+from walking the category listings: it is exhaustive, it costs a single request
+instead of one per listing page, and it gives the canonical ``/en/`` URL of every
+product — the form this database wants to store.
+
+The crawl stays narrow: only the categories named on the command line (the PLA
+scope, by default) are fetched. Nothing else on the site is touched — no blog,
+no cart, no account pages, no images.
 
 Everything goes through ``cache.Cache``, so a second run costs zero requests
 unless the cache has expired or ``--force`` is passed.
 
-    # what would be fetched, without touching the network
+    # what would be fetched, without fetching a single product page
     python tools/arianeplast/crawl.py --dry-run
 
     # PLA categories, the default scope
     python tools/arianeplast/crawl.py
 
     # a different scope
-    python tools/arianeplast/crawl.py --category pla-format-1-kg --category petg
+    python tools/arianeplast/crawl.py --category 3d-filament-petg
 """
 
 from __future__ import annotations
@@ -33,24 +37,36 @@ from cache import DEFAULT_CACHE_DIR, DEFAULT_DELAY, DEFAULT_TTL_DAYS, Cache  # n
 BASE = "https://www.arianeplast.com"
 LANG = "en"
 
-# Category slugs that make up the PLA scope, as they appear in product URLs
-# already recorded in data/materials/arianeplast/.
+# The sitemap is served by the apex host, which redirects dynamic routes to www
+# but serves static files fine.
+SITEMAP_URL = "https://arianeplast.com/1_en_0_sitemap.xml"
+
+# Categories that may hold a PLA product. Membership is *not* decided here: the
+# category only narrows what gets fetched, and `extract.py` then reads the
+# "Material" row of each product's data sheet to tell PLA from the rest.
 PLA_CATEGORIES = [
+    # spool formats
     "pla-format-1-kg",
-    "pla-format-8kg",
     "pla-format-23kg",
+    "pla-format-8kg",
+    "pla-format-10m",
+    "pla-format-315g",
+    # spool-less refills
+    "refill-pla",
+    # ranges that are PLA or PLA-based, to be confirmed per product
+    "pla-eco-arianeplast",
+    "3d-filaments-pla",
+    "3d-filaments-wood",
+    "3d-filament-recycle",
+    "3d-filaments-marquage-laser-",
     "filaments-carbone",
+    "filaments-litophanie",
+    "haute-resistance",
+    "basic-series",
+    "conducteur-electrique",
 ]
 
-# https://www.arianeplast.com/en/<category-slug>/<id>-<product-slug>.html
-PRODUCT_RE = re.compile(
-    r'href="(https://www\.arianeplast\.com/[a-z]{2}/[a-z0-9-]+/\d+[^"]*\.html)"'
-)
-
-
-def category_url(slug: str, page: int = 1) -> str:
-    url = f"{BASE}/{LANG}/{slug}"
-    return f"{url}?page={page}" if page > 1 else url
+LOC_RE = re.compile(r"<loc><!\[CDATA\[([^\]]+)\]\]></loc>")
 
 
 def clean_product_url(url: str) -> str:
@@ -59,52 +75,51 @@ def clean_product_url(url: str) -> str:
     return urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
 
 
-def product_links(html: str, category: str) -> list[str]:
-    found = []
-    for raw in PRODUCT_RE.findall(html):
-        url = clean_product_url(raw)
-        if f"/{category}/" in url and url not in found:
-            found.append(url)
-    return found
+def category_of(url: str) -> str | None:
+    """Return the category slug of a product URL, or None if it is not one."""
+    match = re.search(rf"/{LANG}/([^/]+)/\d+[^/]*\.html$", url)
+    return match.group(1) if match else None
 
 
-def has_next_page(html: str, page: int) -> bool:
-    return f"page={page + 1}" in html
+def sitemap_products(cache: Cache, force: bool = False) -> list[str]:
+    """Every ``/en/`` product URL the shop publishes, in sitemap order."""
+    entry = cache.fetch(SITEMAP_URL, force=force)
+    urls = [clean_product_url(u) for u in LOC_RE.findall(entry.text())]
+    return [u for u in urls if category_of(u)]
+
+
+def scope(products: list[str], categories: list[str]) -> dict[str, list[str]]:
+    wanted = set(categories)
+    result: dict[str, list[str]] = {c: [] for c in categories}
+    for url in products:
+        category = category_of(url)
+        if category in wanted and url not in result[category]:
+            result[category].append(url)
+    return result
 
 
 def crawl(
-    cache: Cache, categories: list[str], max_pages: int, force: bool, dry_run: bool
+    cache: Cache, categories: list[str], force: bool, dry_run: bool
 ) -> dict[str, list[str]]:
-    result: dict[str, list[str]] = {}
-    for category in categories:
-        products: list[str] = []
-        for page in range(1, max_pages + 1):
-            url = category_url(category, page)
-            if dry_run:
-                print(f"[dry-run] listing {url}")
-                break
-            entry = cache.fetch(url, force=force)
-            origin = "cache" if entry.from_cache else "network"
-            html = entry.text()
-            links = product_links(html, category)
-            print(f"  {category} p{page} ({origin}): {len(links)} products")
-            for link in links:
-                if link not in products:
-                    products.append(link)
-            if not has_next_page(html, page):
-                break
-        result[category] = products
+    products = sitemap_products(cache, force=force)
+    print(f"sitemap: {len(products)} product pages published")
 
+    result = scope(products, categories)
+    for category in categories:
+        print(f"  {category:32} {len(result[category]):3}")
     total = sum(len(v) for v in result.values())
     print(f"\n{total} product pages in scope")
+
     if dry_run:
         return result
 
+    done = 0
     for category, urls in result.items():
         for url in urls:
             entry = cache.fetch(url, force=force)
+            done += 1
             origin = "cache" if entry.from_cache else "network"
-            print(f"  [{origin}] {url}")
+            print(f"  [{done:3}/{total}] [{origin}] {entry.status} {url}", flush=True)
     return result
 
 
@@ -119,7 +134,6 @@ def main() -> int:
     parser.add_argument("--cache-dir", default=str(DEFAULT_CACHE_DIR))
     parser.add_argument("--delay", type=float, default=DEFAULT_DELAY)
     parser.add_argument("--ttl-days", type=int, default=DEFAULT_TTL_DAYS)
-    parser.add_argument("--max-pages", type=int, default=20)
     parser.add_argument(
         "--force", action="store_true", help="re-fetch even when cached and fresh"
     )
@@ -131,7 +145,7 @@ def main() -> int:
     cache = Cache(args.cache_dir, ttl_days=args.ttl_days, delay=args.delay)
     categories = args.categories or PLA_CATEGORIES
     print(f"scope: {', '.join(categories)}")
-    crawl(cache, categories, args.max_pages, args.force, args.dry_run)
+    crawl(cache, categories, args.force, args.dry_run)
     return 0
 
 

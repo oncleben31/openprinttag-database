@@ -32,19 +32,49 @@ goes through an on-disk cache:
 * a descriptive User-Agent;
 * requests to any host other than `arianeplast.com` are refused outright.
 
-The crawl is limited to the product categories named on the command line —
-by default the PLA range, which is the scope of the current work.
+The list of product pages comes from the shop's own English sitemap, not from
+walking the category listings: it is exhaustive, it costs one request instead of
+one per listing page, and it yields the canonical `/en/` URL of each product.
+The crawl is then limited to the categories named on the command line — by
+default the categories that may hold a PLA product, which is the scope of the
+current work.
+
+A category name is only a filter on what gets fetched; it does not decide what
+counts as PLA. That call is made from each product's own data sheet, whose
+`Material` row says `PLA+`, `PETG`, and so on.
 
 ```bash
-# show the scope without making a single request
+# show the scope without fetching a single product page
 python tools/arianeplast/crawl.py --dry-run
 
 # fill the cache for the PLA categories
 python tools/arianeplast/crawl.py
 
 # another scope later on
-python tools/arianeplast/crawl.py --category petg-format-1-kg
+python tools/arianeplast/crawl.py --category 3d-filament-petg
 ```
+
+## `extract.py` — cached pages to structured records
+
+Every PrestaShop product page embeds the shop's own product object as an
+HTML-escaped JSON blob in `data-product="…"`. It carries the reference (SKU),
+the per-combination EAN-13, the data-sheet rows, the canonical link and the
+description, so `extract.py` reads that rather than scraping rendered HTML.
+No network access: it reads what `crawl.py` cached.
+
+```bash
+python tools/arianeplast/extract.py -o extracted.yaml
+python tools/arianeplast/extract.py --url 219- --pretty
+```
+
+Two things worth knowing about the output:
+
+* on an `/en/` page the blob's `name` is still French — the shop only translated
+  the meta title. `name_en` therefore comes from `meta_title` (minus the SKU the
+  shop appends to it) and `name_fr` from `name`. Neither is rewritten.
+* `properties` holds only what the description states in so many words, parsed
+  from wordings such as `Temperature: 200 ° C to 230 ° C` and
+  `Temperature heatbed : 60/80 ° C`.
 
 The cache lives in `.cache/arianeplast/` and is git-ignored: it holds the
 manufacturer's raw HTML, which does not belong in this database.
