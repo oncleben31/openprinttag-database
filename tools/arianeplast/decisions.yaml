@@ -1,0 +1,136 @@
+# Decisions applied by build.py, kept out of the code so they can be argued with.
+#
+# Everything here traces back either to a document published by Arianeplast or
+# to a convention the 78 existing entries already follow. Where a value comes
+# from the manufacturer, the source is named.
+
+# ---------------------------------------------------------------------------
+# Spellings the brand uses in the majority of its own entries
+# ---------------------------------------------------------------------------
+spelling:
+  grey: Gray          # "Gray" ×3 vs "Grey" ×3 in the database; the merge plan
+                      # settled on Gray, and the site uses both
+  ocher: Ochre        # two entries already use "Ochre", one "Ocher"
+
+# ---------------------------------------------------------------------------
+# Names that neither the site nor the database gets right on its own.
+# Keyed by the product key printed in the reconciliation report.
+# ---------------------------------------------------------------------------
+names:
+  anti black counterfeiting dna:
+    name: PLA+ DNA Anti-counterfeiting Black
+    reason: >-
+      the shop's English title truncates to "DNA Counterfeit"; the database
+      wording is the correct rendering of "filament anti contrefaçon"
+  anti counterfeiting dna white:
+    name: PLA+ DNA Anti-counterfeiting White
+    reason: same as the black one, hyphenated to match it
+  conductive electrically:
+    name: PLA+ Electrically Conductive
+    reason: the shop leaves "électrique" untranslated in the title
+  bottle green translucent:
+    name: PLA+ Translucent Bottle Green
+    reason: >-
+      "vert bouteille" is bottle green; the shop's title leaves a dangling
+      "Made" once the boilerplate is cut
+  cork:
+    name: PLA+ Cork
+    reason: the shop writes "Liège/Cork"; the English half is the name
+  cork gold:
+    name: PLA+ Cork Gold
+    reason: same, for the gold variant
+  bleuet:
+    name: PLA+ Cornflower Blue
+    reason: >-
+      "bleuet" is cornflower blue. The shop's own PETG range, which is
+      translated, sells "cornflower-blue-petg-1kg", so this is the brand's own
+      English for the colour
+  black wood:
+    name: PLA+ Wood Black
+    reason: the shop's title repeats "wood" on both sides of the colour
+  brick wood:
+    name: PLA+ Wood Brick
+    reason: same repetition; "brique" is brick
+  teak wood:
+    name: PLA+ Wood Teak
+    reason: same repetition; "teck" is teak
+  oak white wood:
+    name: PLA+ Wood White Oak
+    reason: same repetition; "chêne" is oak
+  blue gray:
+    name: PLA+ Blue/Gray
+    reason: >-
+      the shop calls it "bleu/gris"; the import lost the separator and produced
+      the slug arianeplast-pla-bluegrey
+  fuchsia pink translucent:
+    name: PLA+ Translucent Fuchsia Pink
+    reason: the shop writes "Rose Fushia", a misspelling of fuchsia
+
+# ---------------------------------------------------------------------------
+# Products that are not filaments and must not become Material entries
+# ---------------------------------------------------------------------------
+exclude:
+- key: card eco sample swatch
+  reason: a printed colour card, not a filament
+- key: 5 75 x
+  reason: a pack of five 10 m samples, not a single product
+- key: 75 x
+  reason: a sample pack, not a single product
+
+# ---------------------------------------------------------------------------
+# Groups the identity key still splits, and why they are one product
+# ---------------------------------------------------------------------------
+merge_keys:
+  116u construction equipment famous yellow: 116u celebre chantier engins yellow
+  # the same Pantone 116U yellow: one listing carries the French marketing
+  # sentence in its title, the other its English translation
+  alu metallise1: aluminum metallic
+  # a 10 m sample whose title reads "10M PLA Alu métallisé1.75mm", with the
+  # space before the diameter missing
+  aluminum format large metallic: aluminum metallic
+  # the 8 kg "large format" listing of the same metallic aluminium
+  175mm: white
+  # the 10 m sample whose title carries no colour at all; its reference,
+  # F10MBLANC, says white
+
+# ---------------------------------------------------------------------------
+# Tags, from what the manufacturer states
+# ---------------------------------------------------------------------------
+# Matched against the product's name, key and the data sheet's Effect row.
+# `bio_based` is added to every PLA+ entry from the datasheet's "résine issue de
+# ressources végétales renouvelables"; `industrially_compostable` is added only
+# to the Eco range, which the PLA Eco datasheet certifies to EN 13432 (DIN
+# Certco, Vinçotte, BPI). It is removed everywhere else: the PLA+ datasheet does
+# not mention composting, and only 2 of 344 product pages do.
+tags:
+  metallic: imitates_metal
+  silk: silk
+  translucent: translucent
+  fluorescent: neon
+  phosphorescent: glow_in_the_dark
+  wood: contains_wood
+  bamboo: contains_bamboo
+  cork: contains_cork
+  carbon: contains_carbon_fiber
+  recycled: recycled
+  lithophane: lithophane
+  conductive: conductive
+
+# ---------------------------------------------------------------------------
+# Print parameters from the manufacturer's technical datasheets
+# ---------------------------------------------------------------------------
+# Used only for a product whose own page states no temperature. Keyed by a word
+# in the product key, "default" last.
+datasheet_properties:
+  carbon:                       # TEC-PLACARB-001: 195–210 °C, drying 60 °C
+    min_print_temperature: 195
+    max_print_temperature: 210
+    drying_temperature: 60
+  default:                      # TEC-PLA-001 rev 1.0: nozzle 190–230 °C,
+    min_print_temperature: 190  # bed not required, 50–70 °C
+    max_print_temperature: 230
+    min_bed_temperature: 50
+    max_bed_temperature: 70
+
+# TEC-PLA-001: diameters 1.75 mm and 2.85 mm, tolerance ± 0.03 mm
+diameter_tolerance_um: 30

@@ -32,7 +32,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from analyze_db import french_words, normalized_name  # noqa: E402
+from analyze_db import FR_EN, french_words, normalized_name, tokens  # noqa: E402
 
 MATERIALS_DIR = Path("data/materials/arianeplast")
 
@@ -69,9 +69,9 @@ TITLE_NOISE_RE = re.compile(
         \bfor\s+3d\s+print(?:er|ing)?\b | \bimpression\s+3d\b |
         \b3d\s*filaments?\b | \bfilaments?\s*3d\b | \bfilaments?\b |
         \bfil\s+pour\b | \bfils?\b | \bbobines?\b | \bspools?\b | \bde\b |
-        \barianeplast\b | \bmarque\b | \bbrand\b |
+        \barianeplast\b | \bmarque\b | \bbrand\b | \bimprimantes?\b |
         \b\d+(?:[.,]\d+)?\s*(?:kg|g|m|mm)\b |
-        \brefills?\b | \brecharges?\b |
+        \brefills?\b | \brecharges?\b | \b4043d\b |
         \b3d\b |
         \bpar\b
     )
@@ -86,6 +86,67 @@ RAL_RE = re.compile(r"\bral\s*\d+\b", re.I)
 
 # The shop's shorthand for its metallic range in the refill listings.
 KEY_SYNONYMS = {"metal": "metallic", "bouteille": "bottle"}
+
+# The shop's English is machine-translated, and some of it is wrong. Left alone,
+# these both mis-name a product and split it in two, because the French listings
+# of the same filament key on the right word and the English ones do not.
+#
+#   huître  (oyster)      -> "Eighth", as if it were *huit*, eight
+#   pêche   (peach)       -> "Fishing", the other meaning of the word
+#   moule   (mussel)      -> "Mould", the other meaning — the PLA+ datasheet
+#                            settles it: the filled ranges are oyster and
+#                            mussel *shell* powder
+#   or      (gold)        -> left as "or", read as the English conjunction
+#
+# The rest are French words the shop simply never translated.
+SHOP_MISTRANSLATIONS = {
+    "eighth": "oyster",
+    "huitre": "oyster",
+    "fishing": "peach",
+    "peche": "peach",
+    "mould": "mussel",
+    "moule": "mussel",
+    "or": "gold",
+    "bambou": "bamboo",
+    "naturel": "natural",
+    "multicolors": "multicolor",
+    "multicouleurs": "multicolor",
+    "liege": "cork",
+    "diffusant": "diffusing",
+    "adn": "dna",
+    "contrefacon": "counterfeiting",
+    "carbone": "carbon",
+    "metallise": "metallic",
+    "metallised": "metallic",
+    "conducteur": "conductive",
+    "electrique": "electrically",
+    "litophanie": "lithophane",
+    "bois": "wood",
+    "nuancier": "swatch",
+    "echantillon": "sample",
+    "plaquette": "card",
+    "securite": "safety",
+    "metal": "metallic",
+    "clair": "light",
+    "fonce": "dark",
+    "chene": "oak",
+    "brique": "brick",
+    "teck": "teak",
+    "interferentiel": "interferential",
+    "fushia": "fuchsia",
+}
+
+# Left behind once the format and the brand name are cut out of a title:
+# "8kg PLA+ CIEL … made in France by Arianeplast" -> "… Sky by".
+ORPHANS = {"by", "ou", "and", "of", "the", "from", "la", "le", "d", "-", "1", "2", "8"}
+
+# Kept upper-case in a name; everything else is title-cased.
+ACRONYMS = {"DNA", "RAL", "CMYK", "PHA", "UV", "ESD", "PLA", "PETG", "ABS"}
+
+# References the shop glues to the end of a title: "F-DANDPLANOIR1", "FPLAROUGE1KG".
+# Case-sensitive on purpose: a SKU is always upper-case, and matching without
+# regard to case would eat "Fluorescent", "France", "Funky" and "Fishing".
+SKU_RE = re.compile(r"^F-[A-Z0-9-]{4,}$|^F[A-Z]{4,}[A-Z0-9]*$")
 
 
 def slug_key(url: str) -> str:
@@ -120,7 +181,8 @@ def product_key(record: dict) -> str:
 
 def identity_key(text: str) -> str:
     folded = normalized_name(RAL_RE.sub(" ", text))
-    return " ".join(sorted({KEY_SYNONYMS.get(t, t) for t in folded.split()}))
+    words = {SHOP_MISTRANSLATIONS.get(t, t) for t in folded.split() if t not in ORPHANS}
+    return " ".join(sorted({KEY_SYNONYMS.get(t, t) for t in words} - {""}))
 
 
 def clean_title(name_en: Optional[str]) -> Optional[str]:
@@ -151,6 +213,19 @@ def english_source(record: dict) -> tuple[Optional[str], str]:
     return None, "french_only"
 
 
+def translate(text: str) -> str:
+    """Word-for-word French to English, using the versioned FR_EN mapping.
+
+    Only the words in that mapping are touched; anything else is left as the
+    shop wrote it. Word order is not rearranged, so "vert pomme" becomes
+    "green apple" — which is what the shop itself calls it in the refill range.
+    """
+    return " ".join(
+        SHOP_MISTRANSLATIONS.get(FR_EN.get(token, token), FR_EN.get(token, token))
+        for token in tokens(text)
+    )
+
+
 def proposed_material_name(record: dict) -> tuple[Optional[str], str]:
     """'PLA+ red RAL 3020 Arianeplast 1kg made in France' -> 'PLA+ Red RAL 3020'.
 
@@ -160,17 +235,48 @@ def proposed_material_name(record: dict) -> tuple[Optional[str], str]:
     the case the shop gives them.
     """
     source_text, source = english_source(record)
+    if source_text is None:
+        # No English anywhere on the site for this product. Translate the shop's
+        # French wording with the mapping in analyze_db.FR_EN, which is
+        # versioned and auditable, and say that is what happened.
+        source_text = translate(record.get("name") or record.get("meta_title") or "")
+        source = "translated"
     cleaned = clean_title(source_text)
     if not cleaned:
         return None, source
     cleaned = MATERIAL_PREFIX_RE.sub("", cleaned).strip()
     words = []
-    for word in cleaned.split():
-        if word.isupper() or any(c.isdigit() for c in word):
-            words.append(word)          # RAL, 3020, 4043D, 3268C
+    for word in re.split(r"[\s/]+", cleaned):
+        if SKU_RE.match(word):
+            continue                    # a reference the shop glued to the title
+        if word.lower() in ORPHANS:
+            continue                    # "by", "ou", a stray "1" left by "1 kg"
+        if word.lower() in {"pla", "pla+"}:
+            continue                    # the prefix is added back below
+        if any(c.isdigit() for c in word):
+            words.append(word.upper())  # 4043D, 3268C, 3020
+            continue
+        corrected = SHOP_MISTRANSLATIONS.get(word.lower())
+        if corrected:
+            word = corrected
+        if word.upper() in ACRONYMS:
+            words.append(word.upper())
         else:
             words.append(word[:1].upper() + word[1:].lower())
-    return ("PLA+ " + " ".join(words)).strip(), source
+    return ("PLA+ " + " ".join(finish_first(words))).strip(), source
+
+
+# The shop puts the finish before the colour on its spool listings ("Metallic
+# Red") and after it in the refill range ("Red Metal"). The 78 entries already
+# in the database put it first; keep that.
+FINISHES = ("Metallic", "Silk", "Translucent", "Fluorescent", "Pearl", "Wood", "Eco")
+
+
+def finish_first(words: list[str]) -> list[str]:
+    finishes = [w for w in words if w in FINISHES]
+    if not finishes or words[0] in FINISHES:
+        return words
+    return finishes + [w for w in words if w not in FINISHES]
 
 
 # A pack of ten spools is neither a material nor a package of one.
