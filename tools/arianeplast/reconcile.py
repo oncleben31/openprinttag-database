@@ -32,7 +32,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from analyze_db import french_words  # noqa: E402
+from analyze_db import french_words, normalized_name  # noqa: E402
 
 MATERIALS_DIR = Path("data/materials/arianeplast")
 
@@ -71,6 +71,7 @@ TITLE_NOISE_RE = re.compile(
         \bfil\s+pour\b | \bbobines?\b | \bspools?\b |
         \barianeplast\b | \bmarque\b | \bbrand\b |
         \b\d+(?:[.,]\d+)?\s*(?:kg|g|m|mm)\b |
+        \brefills?\b | \brecharges?\b |
         \bpar\b
     )
     """,
@@ -88,6 +89,23 @@ def slug_key(url: str) -> str:
         if t and t.lower() not in BOILERPLATE and not FORMAT_TOKEN_RE.match(t)
     ]
     return " ".join(tokens)
+
+
+def product_key(record: dict) -> str:
+    """What identifies the filament itself, across formats and languages.
+
+    Built from the product's own name — the spool format, the packaging and the
+    shop's boilerplate stripped out, French colour words folded to their English
+    equivalent — because the URL slug is not always enough: every 10 m sample
+    shares the slug ``10m-pla-175mm``, with the colour only in the name.
+    """
+    for text in (record.get("name"), record.get("meta_title")):
+        cleaned = clean_title(text)
+        if cleaned:
+            key = normalized_name(cleaned)
+            if key:
+                return key
+    return normalized_name(slug_key(record["url"]))
 
 
 def clean_title(name_en: Optional[str]) -> Optional[str]:
@@ -140,16 +158,50 @@ def proposed_material_name(record: dict) -> tuple[Optional[str], str]:
     return ("PLA+ " + " ".join(words)).strip(), source
 
 
+# A pack of ten spools is neither a material nor a package of one.
+PACK_RE = re.compile(r"\bpack\b|\b\d+\s*x\s*\d+\s*kg\b", re.I)
+
+# The Material row sometimes answers a different question than "which polymer":
+# "Recycled" says where the pellets come from. The polymer is then in the name.
+NON_POLYMER_MATERIALS = {"recycled", "recycle", "recyclé"}
+POLYMER_RE = re.compile(
+    r"\b(pla|petg|abs|asa|tpu|tpe|pctg|pva|ps|pc|pmma|pa6|pa12|nylon)\b", re.I
+)
+
+
+def is_pack(record: dict) -> bool:
+    return bool(PACK_RE.search(record.get("name") or "")) or bool(
+        PACK_RE.search(record.get("url") or "")
+    )
+
+
 def is_pla(record: dict) -> tuple[Optional[bool], str]:
     """Whether this product is a PLA, and on whose word.
 
-    The data sheet's Material row is the answer when there is one. A fair number
-    of the older products have no such row; for those the shop's own category is
-    the next best evidence, and the report says so rather than hiding it.
+    The data sheet's Material row is the answer when there is one, except when
+    it names something other than a polymer — "Recycled" describes the origin of
+    the pellets, and the polymer is then stated in the product name instead. A
+    fair number of the older products have no Material row at all; for those the
+    shop's own category is the next best evidence. The report always says which
+    of the three answered.
     """
     material = (record.get("material_stated") or "").strip()
-    if material:
+    if material and material.lower() not in NON_POLYMER_MATERIALS:
         return material.upper().startswith("PLA"), "data_sheet"
+
+    polymer = POLYMER_RE.search(record.get("name") or "")
+    if polymer:
+        return polymer.group(1).upper() == "PLA", "name"
+
+    # The blends state their base resin in the product text and nowhere else:
+    # the cork filament is "charged to 30% cork powder and 70% PLA".
+    opening = (record.get("description_short") or "") + " " + (
+        record.get("description") or ""
+    )[:400]
+    polymer = POLYMER_RE.search(opening)
+    if polymer:
+        return polymer.group(1).upper() == "PLA", "description"
+
     category = record.get("category") or ""
     if PLA_CATEGORY_RE.match(category):
         return True, "category"
@@ -173,6 +225,9 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
     listings = [r for r in records if not r.get("http_status")]
     unreachable = [r for r in records if r.get("http_status")]
 
+    packs = [r for r in listings if is_pack(r)]
+    listings = [r for r in listings if not is_pack(r)]
+
     pla, not_pla, unknown = [], [], []
     for record in listings:
         verdict, source = is_pla(record)
@@ -181,13 +236,15 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
 
     groups: dict[str, list[dict]] = defaultdict(list)
     for record in pla:
-        groups[slug_key(record["url"])].append(record)
+        groups[product_key(record)].append(record)
 
     db = load_db()
     db_by_url = {strip_fragment(e.get("url", "")): e for e in db}
+    # The URL is the reliable link to an existing entry; the name key is only a
+    # fallback for the entries whose URL the shop has since changed.
     db_by_key = defaultdict(list)
     for entry in db:
-        db_by_key[slug_key(strip_fragment(entry.get("url", "")))].append(entry)
+        db_by_key[normalized_name(clean_title(entry.get("name", "")) or "")].append(entry)
 
     products = []
     for key, items in sorted(groups.items()):
@@ -254,6 +311,7 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
         "summary": {
             "listings_crawled": len(records),
             "listings_unreachable": len(unreachable),
+            "listings_multi_spool_packs": len(packs),
             "listings_pla": len(pla),
             "listings_not_pla": len(not_pla),
             "listings_material_unstated": len(unknown),
@@ -268,8 +326,14 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
                 1 for p in products if p["proposed_name_source"] == "french_only"
             ),
         },
+        "multi_spool_packs": [{"url": r["url"], "name": r.get("name")} for r in packs],
         "not_pla": [
-            {"url": r["url"], "material": r.get("material_stated")} for r in not_pla
+            {
+                "url": r["url"],
+                "material": r.get("material_stated"),
+                "decided_by": r.get("_pla_source"),
+            }
+            for r in not_pla
         ],
         "material_unstated": [{"url": r["url"], "name": r.get("name")} for r in unknown],
         "unreachable": [{"url": r["url"], "status": r["http_status"]} for r in unreachable],

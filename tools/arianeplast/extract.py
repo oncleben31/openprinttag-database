@@ -197,6 +197,7 @@ def record(url: str, page: str) -> dict[str, Any]:
         "properties": parse_temperatures(blob.get("description") or "") or None,
         "availability": blob.get("availability") or None,
         "description_short": strip_tags(blob.get("description_short") or "") or None,
+        "description": strip_tags(blob.get("description") or "") or None,
         "attachments": [a.get("name") for a in blob.get("attachments") or []] or None,
     }
 
