@@ -1,0 +1,169 @@
+# Proposed clean-up plan for the Arianeplast materials.
+#
+# STATUS: proposal. Nothing here has been applied to data/ yet, and every
+# `verify` entry is a question that must be answered from the manufacturer's
+# own English product page before the change is made. Names marked
+# `proposed_name` are a default to fall back on ONLY if the English page turns
+# out to repeat the French wording; if the page gives its own English name,
+# that name wins.
+#
+# Why the duplicates exist: the current entries were imported one row per
+# product *listing*, and Arianeplast lists the same filament once per spool
+# format (1 kg / 2.3 kg / 8 kg). In the OpenPrintTag model the spool format
+# belongs to MaterialPackage, not to Material, so two listings of one colour
+# must collapse into one Material with several MaterialPackages.
+#
+# Consequence for UUIDs: Material::uuid is UUIDv5(NAMESPACE_MATERIAL,
+# brand_uuid + name). All 78 current entries derive correctly, so *any* name
+# change — including a capitalisation fix — changes the uuid. The values below
+# were computed with scripts/uuid_utils.py.
+
+brand: arianeplast
+brand_uuid: c4eab185-1ed0-577b-a38d-c7630cf6dd18
+
+# ---------------------------------------------------------------------------
+# 1. Duplicate pairs: same product, listed twice under two names
+# ---------------------------------------------------------------------------
+merges:
+- id: gray
+  keep: arianeplast-pla-gray            # "PLA+ Gray", 1 kg listing
+  drop: arianeplast-grey-pla            # "Grey PLA+", 8 kg listing
+  name: PLA+ Gray
+  uuid: 92ffb7f5-0d80-5864-b3f5-d6874d7d6fca   # unchanged
+  colour_conflict: false                # both #545f67ff
+  dropped_url: https://www.arianeplast.com/en/pla-format-8kg/812-bobine-pla-gris-8kg-fil-pour-imprimante-3d-marque-arianeplast.html
+
+- id: green
+  keep: arianeplast-pla-green           # "PLA+ Green", 8 kg listing
+  drop: arianeplast-pla-vert-4043d      # "PLA+ vert 4043D", 1 kg listing
+  name: PLA+ Green
+  uuid: 5a5277d2-4998-5c5a-b942-74216d8c0d7a   # unchanged
+  colour_conflict: true                 # #3d9441ff vs #06b100ff
+  verify: which RGB the English page shows for PLA vert / PLA green
+  dropped_url: https://www.arianeplast.com/en/pla-format-1-kg/97-pla-vert-4043d-3d-filament-arianeplast-fabrique-en-france-1kg.html
+
+- id: metallic-pink
+  keep: arianeplast-pla-rose-metallic   # "PLA+ Rose Metallic", 8 kg listing
+  drop: arianeplast-pla-rose-mtallis    # "PLA+ Rose métallisé", 1 kg listing
+  proposed_name: PLA+ Metallic Pink
+  proposed_slug: arianeplast-pla-metallic-pink
+  uuid: 33a3c4ea-8792-5204-9cb0-2e774e2d16ff   # NEW (name changes)
+  colour_conflict: false                # both #b13566ff
+  verify: >-
+    whether the English page says "pink" or keeps "rose"; the rest of the
+    metallic range is named "PLA+ Metallic <colour>"
+  dropped_url: https://www.arianeplast.com/en/pla-format-1-kg/1203-pla-rose-metallise-3d-filament-arianeplast-1kg-fabrique-en-france-.html
+
+- id: metallic-purple
+  keep: arianeplast-pla-metallic-purple # "PLA+ Metallic purple", 1 kg listing
+  drop: arianeplast-pla-metallic-violet # "PLA+ Metallic Violet", 8 kg listing
+  proposed_name: PLA+ Metallic Purple   # capitalisation fixed
+  uuid: d6dcbc52-337f-5cfd-8418-a808ac013a73   # NEW (capitalisation changes it)
+  colour_conflict: true                 # #8873c7ff vs #ae96d4ff
+  verify: which RGB the English page shows for PLA violet métallisé
+  dropped_url: https://www.arianeplast.com/en/pla-format-8kg/2649-pla-violet-metallise-3d-filament-8kg-fabrique-en-france-arianeplast.html
+
+- id: metallic-red
+  keep: arianeplast-pla-metallic-red    # "PLA+ Metallic Red", 8 kg listing
+  drop: arianeplast-pla-rouge-mtallis   # "PLA+ Rouge métallisé", 1 kg listing
+  name: PLA+ Metallic Red
+  uuid: 71466590-85d6-5b48-b825-151112b25bb6   # unchanged
+  colour_conflict: true                 # #bb5152ff vs #e0493eff
+  verify: which RGB the English page shows for PLA rouge métallisé
+  dropped_url: https://www.arianeplast.com/en/pla-format-1-kg/284-pla-rouge-metallise-3d-filament-arianeplast-1kg-fabrique-en-france-.html
+
+- id: red
+  keep: arianeplast-pla-red             # "PLA+ Red", 8 kg listing
+  drop: arianeplast-pla-rouge           # "PLA+ rouge", 1 kg listing
+  name: PLA+ Red
+  uuid: 6dec8063-9ea6-59a5-a07a-4b5e82412dcd   # unchanged
+  colour_conflict: true                 # #e03f26ff vs #e72f1dff
+  verify: >-
+    both listings state RAL 3020, so one RGB is wrong; check what the English
+    page shows before picking one
+  dropped_url: https://www.arianeplast.com/en/pla-format-1-kg/219-pla-rouge-ral-3020-arianeplast-1kg-fabrique-en-france-.html
+
+# ---------------------------------------------------------------------------
+# 2. Untranslated names, no duplicate involved — rename only
+# ---------------------------------------------------------------------------
+renames:
+- slug: arianeplast-pla-noir
+  proposed_name: PLA+ Black
+  proposed_slug: arianeplast-pla-black
+  uuid: f7bc16bc-4e9b-5c86-903d-23ce06b1c946
+
+- slug: arianeplast-pla-noir-mtallis
+  proposed_name: PLA+ Metallic Black
+  proposed_slug: arianeplast-pla-metallic-black
+  uuid: 94b9d1fc-ea65-57a3-b604-d7de4b64f580
+
+- slug: arianeplast-pla-vert-mtallis
+  proposed_name: PLA+ Metallic Green
+  proposed_slug: arianeplast-pla-metallic-green
+  uuid: 5f9bcd66-2bb6-5153-98ef-0b29da152cdc
+
+- slug: arianeplast-pla-vert-fluo
+  proposed_name: PLA+ Fluorescent Green
+  proposed_slug: arianeplast-pla-fluorescent-green
+  uuid: 3fd3e93e-8ffc-5de2-8826-6328af46a028
+  note: matches the existing "PLA+ Fluorescent Yellow"
+
+- slug: arianeplast-pla-vert-pantone-3268c
+  proposed_name: PLA+ Green Pantone 3268C
+  proposed_slug: arianeplast-pla-green-pantone-3268c
+  uuid: 422535b6-fb1f-5aca-8a7a-14cb6c0452f7
+
+- slug: arianeplast-pla-rose-translucide
+  proposed_name: PLA+ Translucent Pink
+  proposed_slug: arianeplast-pla-translucent-pink
+  uuid: d124e5c2-6340-5398-a035-afc8b2c23896
+
+- slug: arianeplast-pla-violet-translucide
+  proposed_name: PLA+ Translucent Purple
+  proposed_slug: arianeplast-pla-translucent-purple
+  uuid: fce80dd2-81e7-5c14-a3d1-e685005fc87e
+
+- slug: arianeplast-pla-pink-bonbon
+  proposed_name: PLA+ Candy Pink
+  proposed_slug: arianeplast-pla-candy-pink
+  uuid: 0c397522-45a1-5751-a2f6-b5d4c5bd6a52
+  verify: the English page may use another wording for "rose bonbon"
+
+- slug: arianeplast-pla-moule
+  verify: >-
+    "moule" is ambiguous (mussel shell / mould). Its sibling "PLA+ Oyster"
+    (huître) suggests a shell-colour range, but the English page must confirm
+    before renaming.
+
+- slug: arianeplast-pla-blue
+  verify: >-
+    product slug is "pla-bleuet" (cornflower blue) but the entry is named
+    "PLA+ Blue". Confirm the English page name — likely "Cornflower Blue".
+
+# ---------------------------------------------------------------------------
+# 3. Convention fixes, no site lookup needed
+# ---------------------------------------------------------------------------
+conventions:
+- slug: arianeplast-light-grey-pla
+  proposed_name: PLA+ Light Gray
+  proposed_slug: arianeplast-pla-light-gray
+  uuid: eacef973-5b55-5199-a437-8f2e814c6cfb
+  reason: colour-first naming, and "grey" where the rest of the brand uses "gray"
+
+- slug: arianeplast-pla-bluegrey
+  proposed_name: PLA+ Blue/Gray
+  proposed_slug: arianeplast-pla-blue-gray
+  uuid: 77c865f0-3290-50e1-be1c-591a1d53ede4
+  reason: slug lost the separator; "grey" -> "gray"
+
+- slug: arianeplast-pla-yellow-ocher
+  proposed_name: PLA+ Yellow Ochre
+  proposed_slug: arianeplast-pla-yellow-ochre
+  uuid: 44d4134f-cb8c-5a7c-83dd-9738b05be70a
+  reason: two other entries already use "ochre"
+
+- slugs: [arianeplast-pla-purple, arianeplast-pla-turquoise, arianeplast-pla-vert-fluo]
+  fix: url
+  reason: >-
+    these three point at /fr/ pages and carry a "#/1-diametre-175mm" fragment
+    and a duplicated listing id; rewrite them as plain /en/ product URLs

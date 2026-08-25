@@ -16,3 +16,6 @@ dist/
 build/
 *.pyc
 *.pyo
+
+# Local scrape cache (manufacturer HTML, not part of the database)
+.cache/
