@@ -1,0 +1,14 @@
+uuid: 0d75efcd-12a6-5d1f-9a41-95641d54e358
+slug: arianeplast-pla-coral-16-1546
+brand:
+  slug: arianeplast
+name: PLA+ Coral 16-1546
+class: FFF
+type: PLA
+abbreviation: PLA
+url: https://www.arianeplast.com/en/pla-format-1-kg/2568-pla-corail-16-1546-3d-filament-arianeplast-1kg-fabrique-en-france-.html
+tags:
+- bio_based
+properties:
+  min_print_temperature: 200
+  max_print_temperature: 230

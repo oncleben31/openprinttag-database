@@ -6,10 +6,14 @@ name: PLA+ Silk Gray
 class: FFF
 type: PLA
 abbreviation: PLA
-url: https://www.arianeplast.com/en/pla-format-8kg/2915-pla-silk-gris-3d-filament-arianeplast-8kg-fabrique-en-france.html
+url: https://www.arianeplast.com/en/pla-format-1-kg/2913-pla-silk-gris-1kg-filament-3d-arianeplast-3760349160588.html
 primary_color:
   color_rgba: '#a9a8a0ff'
 tags:
+- bio_based
 - silk
-- industrially_compostable
-properties: {}
+properties:
+  min_bed_temperature: 60
+  max_bed_temperature: 70
+  min_print_temperature: 225
+  max_print_temperature: 230

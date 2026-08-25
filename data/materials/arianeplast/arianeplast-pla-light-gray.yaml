@@ -1,0 +1,16 @@
+uuid: eacef973-5b55-5199-a437-8f2e814c6cfb
+slug: arianeplast-pla-light-gray
+brand:
+  slug: arianeplast
+name: PLA+ Light Gray
+class: FFF
+type: PLA
+abbreviation: PLA
+url: https://www.arianeplast.com/en/pla-format-23kg/2010-bobine-pla-gris-clair-23kg-fil-pour-imprimante-3d-marque-arianeplast.html
+primary_color:
+  color_rgba: '#e0e0dcff'
+tags:
+- bio_based
+properties:
+  min_print_temperature: 200
+  max_print_temperature: 230

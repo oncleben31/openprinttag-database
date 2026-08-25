@@ -6,9 +6,12 @@ name: PLA+ metallic ochre
 class: FFF
 type: PLA
 abbreviation: PLA
-url: https://www.arianeplast.com/en/pla-format-8kg/2637-pla-ocre-metallise-3d-filament-8kg-fabrique-en-france-arianeplast.html
+url: https://www.arianeplast.com/en/pla-format-1-kg/429-pla-ocre-metallise-3d-filament-arianeplast-1kg-fabrique-en-france-.html
 primary_color:
   color_rgba: '#e39951ff'
 tags:
-- industrially_compostable
-properties: {}
+- bio_based
+- imitates_metal
+properties:
+  min_print_temperature: 200
+  max_print_temperature: 230
