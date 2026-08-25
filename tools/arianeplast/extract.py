@@ -16,10 +16,20 @@ Nothing here touches the network: it reads what ``crawl.py`` put in the cache.
     # a single page, to eyeball the parse
     python tools/arianeplast/extract.py --url 219- --pretty
 
-A note on languages: on an ``/en/`` page the blob's ``name`` stays French — the
-shop only translated the meta title. ``name_en`` below is therefore taken from
-``meta_title``, and ``name_fr`` from ``name``, so that a caller can see both and
-decide. Neither is rewritten here.
+A note on languages, because the shop is inconsistent about them and this
+module deliberately does not paper over it. On an ``/en/`` page:
+
+* ``name`` (the blob's own product name, same string as the ``<h1>``) is
+  sometimes English and sometimes still French, product by product;
+* ``meta_title`` — the same string as ``<title>`` — is English, but the shop
+  truncates it at about 70 characters, often mid-SKU, so it can lose the end of
+  the product name;
+* the data-sheet rows ``Color Family`` and ``Effect`` are English, short and
+  consistent.
+
+All of them are reported as they are, and ``meta_title_truncated`` says whether
+the second one was cut. Deciding an English name from these is a judgement call
+and is left to the caller.
 """
 
 from __future__ import annotations
@@ -124,11 +134,15 @@ def parse_temperatures(description: str) -> dict[str, int]:
     return found
 
 
+TRUNCATION_RE = re.compile(r"\s*(?:\S*\.\.\.|…)\s*$")
+
+
 def drop_trailing_sku(title: str, sku: Optional[str]) -> str:
     """The shop appends the reference to the meta title: '… made in France FPLAROUGE1KG'."""
-    if sku and title.rstrip().endswith(sku):
-        return title.rstrip()[: -len(sku)].strip()
-    return title.strip()
+    title = title.strip()
+    if sku and title.endswith(sku):
+        title = title[: -len(sku)].strip()
+    return title
 
 
 def record(url: str, page: str) -> dict[str, Any]:
@@ -155,17 +169,24 @@ def record(url: str, page: str) -> dict[str, Any]:
         diameter = parse_diameter_um(combinations[0]["value"] or "")
 
     sku = blob.get("reference") or ld.get("sku") or None
-    name_en = strip_tags(blob.get("meta_title") or "") or (
+    meta_title = strip_tags(blob.get("meta_title") or "") or (
         strip_tags(title.group(1)) if title else ""
     )
+    truncated = bool(TRUNCATION_RE.search(meta_title))
+    meta_title = drop_trailing_sku(TRUNCATION_RE.sub("", meta_title), sku)
 
     return {
         "url": url,
         "category": blob.get("category") or None,
+        "category_name": blob.get("category_name") or None,
         "id_product": blob.get("id_product"),
-        "name_en": drop_trailing_sku(name_en, sku) or None,
-        "name_fr": strip_tags(blob.get("name") or "")
+        "name": strip_tags(blob.get("name") or "")
         or (strip_tags(h1.group(1)) if h1 else None),
+        "meta_title": meta_title or None,
+        "meta_title_truncated": truncated,
+        "color_family": features.get("Color Family") or None,
+        "effect": features.get("Effect") or None,
+        "material_stated": features.get("Material") or None,
         "sku": sku,
         "gtin": (blob.get("ean13") or None)
         or next((c["gtin"] for c in combinations if c["gtin"]), None),
