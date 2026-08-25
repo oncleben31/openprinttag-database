@@ -134,6 +134,7 @@ SHOP_MISTRANSLATIONS = {
     "teck": "teak",
     "interferentiel": "interferential",
     "fushia": "fuchsia",
+    "brun": "brown",
 }
 
 # Left behind once the format and the brand name are cut out of a title:
@@ -263,7 +264,11 @@ def proposed_material_name(record: dict) -> tuple[Optional[str], str]:
             words.append(word.upper())
         else:
             words.append(word[:1].upper() + word[1:].lower())
-    return ("PLA+ " + " ".join(finish_first(words))).strip(), source
+    # "PLA+" and "PLA Eco" are different ranges; take the prefix from what the
+    # listing itself says rather than assuming the one the database happens to
+    # hold most of.
+    prefix = "PLA+" if re.search(r"\bpla\s*\+", source_text or "", re.I) else "PLA"
+    return (prefix + " " + " ".join(finish_first(words))).strip(), source
 
 
 # The shop puts the finish before the colour on its spool listings ("Metallic
@@ -388,6 +393,13 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
             (s for n, s in named if n and s == "name"),
             next((s for n, s in named if n), "french_only"),
         )
+        # "PLA+" and "PLA Eco" are different ranges, but the shop drops the "+"
+        # on some listings of a PLA+ product. One listing saying PLA+ is enough.
+        if best and any(
+            re.search(r"\bpla\s*\+", (i.get("name") or "") + " " + (i.get("meta_title") or ""), re.I)
+            for i in ordered
+        ):
+            best = re.sub(r"^PLA\b\+?", "PLA+", best)
         products.append(
             {
                 "key": key,
@@ -415,7 +427,17 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
                 "proposed_name": best,
                 "proposed_name_source": source,
                 "db_entries": [
-                    {"slug": e.get("slug"), "name": e.get("name"), "uuid": e.get("uuid")}
+                    {
+                        # Everything the builder must carry over from an entry
+                        # that already exists — colours above all, which the
+                        # site does not publish and cannot be recovered from it.
+                        key: e[key]
+                        for key in (
+                            "slug", "name", "uuid", "primary_color",
+                            "secondary_colors", "tags",
+                        )
+                        if key in e
+                    }
                     for e in entries
                 ],
             }

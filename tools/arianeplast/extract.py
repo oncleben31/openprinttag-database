@@ -66,7 +66,8 @@ BED_RE = re.compile(
 )
 
 WEIGHT_RE = re.compile(r"([\d.,]+)\s*(kg|g)\b", re.I)
-DIAMETER_RE = re.compile(r"([\d.,]+)\s*mm", re.I)
+DIAMETER_RE = re.compile(r"(\d+[.,]\d+)\s*mm", re.I)
+COMPACT_DIAMETER_RE = re.compile(r"\b(175|285)\s*mm\b", re.I)
 
 
 def strip_tags(text: str) -> str:
@@ -112,6 +113,14 @@ def parse_diameter_um(text: str) -> Optional[int]:
     if not match:
         return None
     return round(float(match.group(1).replace(",", ".")) * 1000)
+
+
+def compact_diameter_um(text: str) -> Optional[int]:
+    """'175mm' in a URL slug means 1.75 mm; '285mm' means 2.85 mm."""
+    match = COMPACT_DIAMETER_RE.search(text or "")
+    if not match:
+        return None
+    return {"175": 1750, "285": 2850}[match.group(1)]
 
 
 def parse_temperatures(description: str) -> dict[str, int]:
@@ -167,6 +176,13 @@ def record(url: str, page: str) -> dict[str, Any]:
     diameter = parse_diameter_um(features.get("Diameter", ""))
     if diameter is None and combinations:
         diameter = parse_diameter_um(combinations[0]["value"] or "")
+    if diameter is None:
+        # The refill listings carry no Diameter row, but say "1.75mm" in the
+        # title and "175mm" in the URL. Both are the shop's own statement.
+        for text in (blob.get("name") or "", url):
+            diameter = parse_diameter_um(text) or compact_diameter_um(text)
+            if diameter:
+                break
 
     sku = blob.get("reference") or ld.get("sku") or None
     meta_title = strip_tags(blob.get("meta_title") or "") or (

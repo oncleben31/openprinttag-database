@@ -59,8 +59,8 @@ def name_needs_fixing(name: str, decisions: dict) -> Optional[str]:
     """Why an existing name must change, or None to leave it alone."""
     if french_words(name):
         return "French wording"
-    if not name.startswith("PLA+ "):
-        return "brand convention is 'PLA+ <colour>'"
+    if not name.startswith(("PLA+ ", "PLA ")):
+        return "brand convention is 'PLA[+] <colour>'"
     for wrong, right in decisions["spelling"].items():
         if re.search(rf"\b{wrong}\b", name, re.I):
             return f"the brand spells it {right!r}"
@@ -113,7 +113,10 @@ def material_tags(product: dict, existing: list[str], decisions: dict) -> list[s
     ).lower()
     is_eco = "eco" in product["key"].split()
 
-    tags.add("industrially_compostable" if is_eco else "bio_based")
+    tags.add("bio_based")
+    if is_eco:
+        # The PLA Eco datasheet certifies EN 13432 (DIN Certco, Vinçotte, BPI).
+        tags.add("industrially_compostable")
     for pattern, tag in decisions["tags"].items():
         if re.search(rf"\b{pattern}\b", text):
             tags.add(tag)
@@ -136,9 +139,22 @@ def package_slug(material_slug: str, listing: dict) -> str:
     return f"{material_slug}{suffix}-{listing['net_weight_g']}g"
 
 
+def surviving_entry(product: dict) -> dict:
+    """The database entry a merged product inherits from.
+
+    The same one `material_name` keeps: the entry whose name is English. Its
+    colour is the one carried over, because the site publishes no colour codes
+    at all and the value cannot be recovered from it — see findings.md.
+    """
+    entries = product["db_entries"]
+    if not entries:
+        return {}
+    return next((e for e in entries if not french_words(e["name"])), entries[0])
+
+
 def build_material(product: dict, decisions: dict) -> dict[str, Any]:
     name, provenance = material_name(product, decisions)
-    existing = product["db_entries"][0] if product["db_entries"] else {}
+    existing = surviving_entry(product)
     slug = expected_slug(name)
     entry: dict[str, Any] = {
         "uuid": str(generate_material_uuid(BRAND_UUID, name)),
@@ -150,9 +166,10 @@ def build_material(product: dict, decisions: dict) -> dict[str, Any]:
         "abbreviation": "PLA",
         "url": reference_listing(product)["url"],
     }
-    colour = (existing.get("primary_color") or {}) if existing else {}
-    if colour:
-        entry["primary_color"] = colour
+    if existing.get("primary_color"):
+        entry["primary_color"] = existing["primary_color"]
+    if existing.get("secondary_colors"):
+        entry["secondary_colors"] = existing["secondary_colors"]
     entry["tags"] = material_tags(product, existing.get("tags") or [], decisions)
     entry["properties"] = material_properties(product, decisions)
     entry["_provenance"] = provenance
@@ -190,7 +207,7 @@ def build_packages(material: dict, product: dict, decisions: dict) -> list[dict]
 
 ORDER = [
     "uuid", "slug", "brand", "name", "class", "type", "abbreviation", "url",
-    "primary_color", "tags", "properties",
+    "primary_color", "secondary_colors", "tags", "properties",
 ]
 PACKAGE_ORDER = [
     "uuid", "slug", "class", "brand_specific_id", "gtin", "material",
@@ -266,6 +283,24 @@ def main() -> int:
         if path.stem in live_slugs:
             continue
         (retired if path.stem in superseded else delisted).append(path)
+
+    # Two listings reducing to one package slug means the shop contradicts
+    # itself about a weight. Keep the first and say so rather than have one
+    # silently overwrite the other.
+    seen: dict[str, dict] = {}
+    conflicts = []
+    for package in written_packages:
+        if package["slug"] in seen:
+            conflicts.append((package, seen[package["slug"]]))
+        else:
+            seen[package["slug"]] = package
+    written_packages = list(seen.values())
+    for package, kept in conflicts:
+        print(
+            f"  conflicting weights for {package['slug']}: kept "
+            f"{kept.get('brand_specific_id')}, dropped "
+            f"{package.get('brand_specific_id')} ({package['url']})"
+        )
 
     print(f"{len(kept_materials)} materials, {len(written_packages)} packages")
     print(f"{len(retired)} files superseded by a rename or a merge")
