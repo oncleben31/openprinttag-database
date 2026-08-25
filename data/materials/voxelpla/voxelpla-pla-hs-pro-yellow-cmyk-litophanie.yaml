@@ -1,0 +1,22 @@
+uuid: fde05ab7-a74b-4933-8719-fb86d6060e3a
+slug: voxelpla-pla-hs-pro-yellow-cmyk-litophanie
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  yellow cmyk litophanie
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#ffff00ff'
+tags:
+- industrially_compostable
+- high_speed
+- cmyk
+- litophanie
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

@@ -1,0 +1,21 @@
+uuid: 4358037c-9889-41c2-bc2e-6a78732d4460
+slug: voxelpla-pla-hs-pro-silk-dark-green
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  silk dark green
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#006400ff'
+tags:
+- industrially_compostable
+- high_speed
+- silk
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

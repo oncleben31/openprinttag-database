@@ -1,0 +1,21 @@
+uuid: c63e5174-f4e1-4e9c-bea6-56b0ee8c4070
+slug: voxelpla-pla-hs-pro-blue-translucent
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  blue translucent
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#00bfffff'
+tags:
+- industrially_compostable
+- high_speed
+- translucent
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

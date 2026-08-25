@@ -1,0 +1,20 @@
+uuid: 30003f19-5830-4a8b-8248-b8db3e404593
+slug: voxelpla-pla-hs-pro-blue-ciel
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  blue ciel
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#87ceebff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

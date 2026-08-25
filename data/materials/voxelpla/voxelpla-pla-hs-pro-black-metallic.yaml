@@ -1,0 +1,21 @@
+uuid: c6960b5f-aba9-4f0a-aee6-317845d9eb97
+slug: voxelpla-pla-hs-pro-black-metallic
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  black metallic
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#2c2c2cff'
+tags:
+- industrially_compostable
+- high_speed
+- metallic
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

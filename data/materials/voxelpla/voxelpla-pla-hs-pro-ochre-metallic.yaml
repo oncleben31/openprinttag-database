@@ -1,0 +1,21 @@
+uuid: 29416ac4-e23f-4cdd-bdd9-167010698690
+slug: voxelpla-pla-hs-pro-ochre-metallic
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  ochre metallic
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#cc7722ff'
+tags:
+- industrially_compostable
+- high_speed
+- metallic
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

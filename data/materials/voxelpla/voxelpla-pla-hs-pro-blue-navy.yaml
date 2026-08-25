@@ -1,0 +1,20 @@
+uuid: c65f4885-0cae-433d-8970-ed84293bf9a7
+slug: voxelpla-pla-hs-pro-blue-navy
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  blue navy
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#000080ff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

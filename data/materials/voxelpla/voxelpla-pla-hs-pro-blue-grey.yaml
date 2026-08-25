@@ -1,0 +1,20 @@
+uuid: 713b5f01-69c3-4d4d-b264-31185ae5ff62
+slug: voxelpla-pla-hs-pro-blue-grey
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  blue/grey
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#6b8caeff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

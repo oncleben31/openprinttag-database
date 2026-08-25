@@ -1,0 +1,20 @@
+uuid: c91c5668-2140-4750-bd1b-ef2338d8afc3
+slug: voxelpla-pla-hs-pro-green-pomme
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  green pomme
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#7cfc00ff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

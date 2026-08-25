@@ -1,0 +1,20 @@
+uuid: 85e465aa-18f4-4a2b-a147-2b690f01edef
+slug: voxelpla-pla-hs-pro-cornflower
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  cornflower
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#6495edff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

@@ -1,0 +1,21 @@
+uuid: 6951c0d7-c2a5-4b42-a78f-5a65da566175
+slug: voxelpla-pla-hs-pro-dna-black-anti-counterfeiting
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  dna black anti-counterfeiting
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#000000ff'
+tags:
+- industrially_compostable
+- high_speed
+- anti-counterfeiting
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

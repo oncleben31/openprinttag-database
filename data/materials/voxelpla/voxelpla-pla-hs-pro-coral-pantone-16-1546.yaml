@@ -1,0 +1,21 @@
+uuid: e56279c8-dec1-404e-8f00-dc88ffa67c38
+slug: voxelpla-pla-hs-pro-coral-pantone-16-1546
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  coral pantone 16-1546
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#ff7f50ff'
+tags:
+- industrially_compostable
+- high_speed
+- pantone
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

@@ -1,0 +1,21 @@
+uuid: 1616be52-e37a-40e3-92b2-a9fea0dc5196
+slug: voxelpla-pla-hs-pro-red-metallic
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  red metallic
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#cd5c5cff'
+tags:
+- industrially_compostable
+- high_speed
+- metallic
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

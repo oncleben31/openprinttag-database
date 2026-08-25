@@ -1,0 +1,21 @@
+uuid: d1a0e015-84c9-4f11-99dc-5198b17213c4
+slug: voxelpla-pla-hs-pro-grey-anthracite-metallic
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  grey anthracite metallic
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#404040ff'
+tags:
+- industrially_compostable
+- high_speed
+- metallic
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

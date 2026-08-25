@@ -1,0 +1,21 @@
+uuid: f0fbfeaa-acc2-4385-9a64-5bad83e44526
+slug: voxelpla-pla-hs-pro-green-fluorescent
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  green fluorescent
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#39ff14ff'
+tags:
+- industrially_compostable
+- high_speed
+- fluorescent
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

@@ -1,0 +1,20 @@
+uuid: f2b76a99-a12b-4e33-b9ad-d64033fcbf68
+slug: voxelpla-pla-hs-pro-ochre-yellow
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  ochre yellow
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#cc7722ff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

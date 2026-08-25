@@ -1,0 +1,20 @@
+uuid: 73fcd26b-ef96-4124-a066-4794ef8e4d85
+slug: voxelpla-pla-hs-pro-naturel-3d
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  naturel 3d
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#f5deb3ff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60

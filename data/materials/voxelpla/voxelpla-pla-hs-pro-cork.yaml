@@ -1,0 +1,20 @@
+uuid: 25b43a73-fd72-43b8-8edd-8d0fdfbef21d
+slug: voxelpla-pla-hs-pro-cork
+brand:
+  slug: voxelpla
+name: PLA+ HS (Pro)  cork
+class: FFF
+type: PLA
+abbreviation: PLA
+primary_color:
+  color_rgba: '#d2b48cff'
+tags:
+- industrially_compostable
+- high_speed
+photos: []
+properties:
+  density: 1.23
+  min_print_temperature: 200
+  max_print_temperature: 210
+  min_bed_temperature: 45
+  max_bed_temperature: 60
