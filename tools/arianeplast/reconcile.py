@@ -68,14 +68,24 @@ TITLE_NOISE_RE = re.compile(
         \bfabriqu[ée]s?\s+en\s+france\b |
         \bfor\s+3d\s+print(?:er|ing)?\b | \bimpression\s+3d\b |
         \b3d\s*filaments?\b | \bfilaments?\s*3d\b | \bfilaments?\b |
-        \bfil\s+pour\b | \bbobines?\b | \bspools?\b |
+        \bfil\s+pour\b | \bfils?\b | \bbobines?\b | \bspools?\b | \bde\b |
         \barianeplast\b | \bmarque\b | \bbrand\b |
         \b\d+(?:[.,]\d+)?\s*(?:kg|g|m|mm)\b |
         \brefills?\b | \brecharges?\b |
+        \b3d\b |
         \bpar\b
     )
     """,
 )
+
+# A RAL reference is the same colour whether the shop writes "RAL 3020",
+# "RAL3020" or nothing at all — it varies between the formats of one product, so
+# it cannot take part in identifying it. Pantone references are left alone: the
+# shop sells "PLA+ Green" and "PLA+ Green Pantone 3268C" as two products.
+RAL_RE = re.compile(r"\bral\s*\d+\b", re.I)
+
+# The shop's shorthand for its metallic range in the refill listings.
+KEY_SYNONYMS = {"metal": "metallic", "bouteille": "bottle"}
 
 
 def slug_key(url: str) -> str:
@@ -102,10 +112,15 @@ def product_key(record: dict) -> str:
     for text in (record.get("name"), record.get("meta_title")):
         cleaned = clean_title(text)
         if cleaned:
-            key = normalized_name(cleaned)
+            key = identity_key(cleaned)
             if key:
                 return key
-    return normalized_name(slug_key(record["url"]))
+    return identity_key(slug_key(record["url"]))
+
+
+def identity_key(text: str) -> str:
+    folded = normalized_name(RAL_RE.sub(" ", text))
+    return " ".join(sorted({KEY_SYNONYMS.get(t, t) for t in folded.split()}))
 
 
 def clean_title(name_en: Optional[str]) -> Optional[str]:
@@ -244,7 +259,7 @@ def reconcile(records: list[dict]) -> dict[str, Any]:
     # fallback for the entries whose URL the shop has since changed.
     db_by_key = defaultdict(list)
     for entry in db:
-        db_by_key[normalized_name(clean_title(entry.get("name", "")) or "")].append(entry)
+        db_by_key[identity_key(clean_title(entry.get("name", "")) or "")].append(entry)
 
     products = []
     for key, items in sorted(groups.items()):
