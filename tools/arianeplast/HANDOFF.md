@@ -1,6 +1,7 @@
 # Arianeplast — état des travaux (handoff)
 
-Document de reprise pour une nouvelle session. Dernière mise à jour : 2026-08-25.
+Document de reprise pour une nouvelle session. Dernière mise à jour : 2026-08-25
+(session 2 — diagnostic réseau corrigé, sitemap anglais récupéré).
 
 ## Mission
 
@@ -20,38 +21,80 @@ Ne toucher à aucun autre fabricant.
    incomplète et incohérente d'un produit à l'autre.
 4. **Ménager le serveur du fabricant** : passer par un cache, ne scraper que le
    périmètre de l'activité en cours.
-5. **Branche de travail : `arianeplast-claude`** (créée, poussée).
+5. **Branche de travail** : `claude/arianeplast-openprinttag-resume-nwxj31`
+   (session 2). Elle contient l'intégralité de `arianeplast-claude`, dont elle
+   est un fast-forward exact.
 
 ## État du dépôt
 
-- Branche `arianeplast-claude`, poussée sur `origin`, à jour.
-- Dernier commit : `4dfdbd0` *Add Arianeplast audit tooling and cached scraper*.
-- **`data/` n'a pas été modifié.** Aucune donnée n'a encore été corrigée.
+- Branche `claude/arianeplast-openprinttag-resume-nwxj31`, poussée sur `origin`.
+- Contenu identique à `arianeplast-claude` : `4dfdbd0` *Add Arianeplast audit
+  tooling and cached scraper* + `bb0cb88` *Add Arianeplast handoff notes*,
+  plus la présente mise à jour.
+- **`data/` n'a toujours pas été modifié.** Aucune donnée n'a encore été
+  corrigée — ni le lot A, ni le lot B.
 - Ajouts : `tools/arianeplast/*` et une ligne `.cache/` dans `.gitignore`.
 
-## BLOQUANT — accès réseau
+## Accès réseau — diagnostic corrigé en session 2
 
-`arianeplast.com` est **injoignable** depuis la session Claude Code : la
-politique d'egress de l'environnement n'autorise qu'une liste blanche
-(GitHub, PyPI, npm…) et refuse tout le reste.
+⚠️ **La session 1 s'est trompée** en concluant que « `arianeplast.com` est
+injoignable ». L'allowlist d'egress est **exacte par hôte**, et c'est l'apex
+qui passait, pas le `www` :
 
-```
-"detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
-"host":   "www.arianeplast.com:443"
-```
+| Hôte | Résultat mesuré |
+|---|---|
+| `arianeplast.com` | ✅ tunnel CONNECT établi, réponses Cloudflare réelles |
+| `www.arianeplast.com` | ❌ `403 to CONNECT` (refus de politique) |
 
-Vérification rapide dans une nouvelle session :
+L'apex sert les **fichiers statiques** (200 sur `/robots.txt`,
+`/1_index_sitemap.xml`, `/1_en_0_sitemap.xml`) mais redirige toute route
+PrestaShop dynamique vers `www` (`301 … ?controller=404`) — les pages produit
+étaient donc bien hors d'atteinte, mais pour cette raison-là.
+
+**L'utilisateur a demandé l'ouverture de `www.arianeplast.com`.** À vérifier en
+début de session avant toute autre chose :
 
 ```bash
-curl -sS "$HTTPS_PROXY/__agentproxy/status" | head -20
+curl -sS "$HTTPS_PROXY/__agentproxy/status"
+curl -sS -o /dev/null -w "%{http_code}\n" --max-time 25 "https://www.arianeplast.com/en/"
 ```
 
-Le blocage n'a pas été contourné. Il faut autoriser `arianeplast.com` dans la
-configuration réseau de l'environnement
-(<https://code.claude.com/docs/en/claude-code-on-the-web>).
+Si le second renvoie 200, le lot B est débloqué. S'il renvoie
+`CONNECT tunnel failed, response 403`, l'ouverture n'a pas pris effet : le
+signaler et se rabattre sur le lot A. **Ne pas contourner le blocage** (pas de
+Host header forgé, pas de proxy tiers, pas de `--insecure`).
 
-Tant qu'il tient, seules les corrections **ne nécessitant pas le site** sont
-réalisables (voir « Prochaines étapes », lot A).
+## Acquis de la session 2 — sitemap anglais
+
+Récupéré via l'apex, non versionné, dans `.cache/arianeplast/en_sitemap.xml`
+(318 Ko, 716 URL). À re-télécharger si absent :
+
+```bash
+curl -sS "https://arianeplast.com/1_en_0_sitemap.xml" -o .cache/arianeplast/en_sitemap.xml
+```
+
+Trois enseignements :
+
+1. **La base est bien plus incomplète qu'estimé.** Le catalogue PLA en ligne
+   dans le périmètre du handoff compte **217 annonces**
+   (`pla-format-1-kg` 76 · `pla-format-23kg` 68 · `pla-format-8kg` 68 ·
+   `filaments-carbone` 5) contre **78 fiches en base**, soit ~36 %. Le format
+   2.3 kg est le plus sinistré : 6 fiches importées sur 68 annonces.
+2. **Le sitemap ne répond pas aux questions `verify:` de nommage.** Les
+   link-rewrites PLA n'ont jamais été traduits : le sitemap `/en/` contient
+   toujours `pla-bleuet`, `pla-moule`, `pla-rose-bonbon`, `pla-ocre-jaune`.
+   Il faut le `<h1>` des pages produit, donc `www`.
+3. **Une exception exploitable** : la gamme PETG, plus récente, *est* traduite,
+   et contient `cornflower-blue-petg-1kg-…`. C'est la traduction d'Arianeplast
+   pour « bleuet », ce qui appuie l'hypothèse *Cornflower Blue* de
+   `merge_plan.yaml` pour `arianeplast-pla-blue`. Preuve indirecte (autre
+   gamme) — à confirmer sur la page PLA anglaise avant d'appliquer.
+
+Les 4 conflits de couleur ⚠️ restent non arbitrables sans les pages produit.
+
+Note : 19 des 217 annonces du périmètre portent un EAN-13 dans leur slug
+(134 sur 649 pour tout le catalogue). Trop peu pour bâtir les `MaterialPackage`
+dessus, mais utile en recoupement.
 
 ## Activité 1 — analyse de la base : FAITE
 
@@ -182,24 +225,45 @@ Note d'environnement : le `python3` par défaut du conteneur est en 3.11, or le
 projet exige 3.12+ (`uuid.uuid5` sur des `bytes`). Utiliser `python3.13`, ou
 `make setup` puis `venv/bin/python`.
 
+## Questions ouvertes — à trancher avec l'utilisateur
+
+Posées en fin de session 2, **sans réponse à ce jour**. Elles conditionnent le
+plan de travail ; les poser dès le début de la session suivante.
+
+1. **Ordonnancement du lot A.** Le faire avant le lot B provoque deux vagues de
+   changements d'UUID sur certaines fiches (une au renommage de convention, une
+   seconde si la page anglaise impose un autre nom). Recommandation de la
+   session 2 : faire quand même le lot A d'abord, le nettoyage de convention
+   étant indépendant des noms marqués `verify:`. Arbitrage utilisateur.
+2. **Périmètre.** Les ~139 annonces PLA absentes de la base (217 en ligne vs 78)
+   font-elles partie de la mission, ou se limite-t-on à corriger l'existant ?
+
 ## Prochaines étapes
 
 **Lot A — sans réseau, réalisable tout de suite**
 - Corriger les 5 slugs corrompus (`mtallis`, `bluegrey`).
 - Aligner les 2 fiches hors convention (`grey-pla`, `light-grey-pla`).
-- Nettoyer les 3 URL `/fr/` + fragments.
 - Uniformiser `Gray` / `Ochre`.
+- Corriger les 3 URL `/fr/` + fragments — **mais en les remplaçant par les URL
+  `/en/` canoniques lues dans `.cache/arianeplast/en_sitemap.xml`**, et non en
+  les réécrivant à la main : fabriquer une URL violerait la règle « ne rien
+  inventer ». Profiter du sitemap pour auditer au passage les 78 URL de la base
+  et repérer celles qui pointent vers une annonce morte ou mal formée.
 - Régénérer les UUID de toutes les fiches renommées, puis `make validate`.
 
-**Lot B — dès que `arianeplast.com` est autorisé**
-1. `python3 tools/arianeplast/crawl.py` sur la gamme PLA (≈ 80–100 pages,
-   une seule fois, mises en cache).
-2. Ajuster l'extraction de liens de `crawl.py` sur le HTML réel.
-3. Trancher les 4 conflits de couleur et les noms marqués `verify:`.
+**Lot B — dès que `www.arianeplast.com` est joignable**
+1. `python3 tools/arianeplast/crawl.py` sur la gamme PLA. Le sitemap donne
+   désormais la liste exacte des URL : **217 annonces** dans le périmètre, et
+   non 80–100 comme estimé en session 1. Envisager d'alimenter `crawl.py`
+   directement depuis le sitemap plutôt que par découverte de liens.
+2. Ajuster l'extraction de liens de `crawl.py` sur le HTML réel (jamais testée).
+3. Trancher les 4 conflits de couleur et les noms marqués `verify:`
+   (dont `pla-blue` → *Cornflower Blue*, cf. l'indice PETG ci-dessus).
 4. Re-saisir les 10 couleurs suspectes depuis les fiches produit.
 5. Remplir `properties` (températures buse/plateau, séchage…) — 0/78
    actuellement.
 6. Créer les `MaterialPackage` (GTIN, poids, container) et fusionner les
-   6 doublons dans le même lot.
+   6 doublons **dans le même lot** : supprimer une fiche 1 kg avant d'avoir créé
+   son package fait perdre la seule trace de ce format.
 7. Ajouter les tags visuels manquants (`pearlescent`, etc.) selon ce que dit
    la fiche produit.
