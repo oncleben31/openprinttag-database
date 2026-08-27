@@ -1,10 +1,10 @@
 uuid: 154b0705-39b5-5d7e-8cfe-a29c5cb2c9d1
-slug: arianeplast-pla-silk-gray-1000g
+slug: arianeplast-pla-silk-grey-1000g
 class: FFF
 brand_specific_id: C30-PLASILKGRI1
 gtin: 3760349160588
 material:
-  slug: arianeplast-pla-silk-gray
+  slug: arianeplast-pla-silk-grey
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000

@@ -1,10 +1,10 @@
 uuid: feaf4410-0ec1-5d58-9906-90b0bd938172
-slug: arianeplast-pla-metallic-anthracite-gray-2300g
+slug: arianeplast-pla-metallic-anthracite-grey-2300g
 class: FFF
 brand_specific_id: F-PLAGRIANTMET2
 gtin: 3760349163206
 material:
-  slug: arianeplast-pla-metallic-anthracite-gray
+  slug: arianeplast-pla-metallic-anthracite-grey
 container:
   slug: 2300g
 nominal_netto_full_weight: 2300

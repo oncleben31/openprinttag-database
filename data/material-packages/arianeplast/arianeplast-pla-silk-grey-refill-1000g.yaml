@@ -1,10 +1,10 @@
 uuid: 2d56e39b-19d2-520c-ac8a-7211c1f59061
-slug: arianeplast-pla-silk-gray-refill-1000g
+slug: arianeplast-pla-silk-grey-refill-1000g
 class: FFF
 brand_specific_id: REFPLASILKGRIS
 gtin: 3760349168126
 material:
-  slug: arianeplast-pla-silk-gray
+  slug: arianeplast-pla-silk-grey
 nominal_netto_full_weight: 1000
 filament_diameter: 1750
 filament_diameter_tolerance: 30

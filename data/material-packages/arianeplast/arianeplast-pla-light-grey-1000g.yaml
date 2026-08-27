@@ -1,10 +1,10 @@
 uuid: 26af2168-82b1-5782-8028-13b77a04c4fb
-slug: arianeplast-pla-light-gray-1000g
+slug: arianeplast-pla-light-grey-1000g
 class: FFF
 brand_specific_id: F-4043D-gris
 gtin: 3760349160595
 material:
-  slug: arianeplast-pla-light-gray
+  slug: arianeplast-pla-light-grey
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000

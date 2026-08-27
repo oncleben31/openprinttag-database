@@ -1,8 +1,8 @@
-slug: arianeplast-pla-metallic-anthracite-gray-8000g
+slug: arianeplast-pla-metallic-anthracite-grey-8000g
 class: FFF
 brand_specific_id: F-PLAGRIANTMET8
 material:
-  slug: arianeplast-pla-metallic-anthracite-gray
+  slug: arianeplast-pla-metallic-anthracite-grey
 container:
   slug: 8000g
 nominal_netto_full_weight: 8000

@@ -1,10 +1,10 @@
 uuid: 9c98e3c5-4d3f-5c75-ac37-55d51e0792aa
-slug: arianeplast-pla-blue-gray-8000g
+slug: arianeplast-pla-blue-grey-8000g
 class: FFF
 brand_specific_id: FPLABG8kg
 gtin: 3760349161707
 material:
-  slug: arianeplast-pla-blue-gray
+  slug: arianeplast-pla-blue-grey
 container:
   slug: 8000g
 nominal_netto_full_weight: 8000

@@ -1,10 +1,10 @@
 uuid: 27f65ccc-cee1-532f-a7e8-c39a7b1c1d35
-slug: arianeplast-pla-silk-gray-8000g
+slug: arianeplast-pla-silk-grey-8000g
 class: FFF
 brand_specific_id: F-PLASILKGRIS8
 gtin: 3760349163862
 material:
-  slug: arianeplast-pla-silk-gray
+  slug: arianeplast-pla-silk-grey
 container:
   slug: 8000g
 nominal_netto_full_weight: 8000

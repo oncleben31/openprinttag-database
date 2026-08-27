@@ -1,10 +1,10 @@
 uuid: e902fb7e-f19d-5c00-bfed-a66b3309fdb6
-slug: arianeplast-pla-eco-gray-1000g
+slug: arianeplast-pla-eco-grey-1000g
 class: FFF
 brand_specific_id: ECO GRIS
 gtin: 3760276363861
 material:
-  slug: arianeplast-pla-eco-gray
+  slug: arianeplast-pla-eco-grey
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000

@@ -1,10 +1,10 @@
 uuid: c9f5985a-7e66-5e46-af25-2f8fdf3ae85f
-slug: arianeplast-pla-metallic-anthracite-gray-1000g
+slug: arianeplast-pla-metallic-anthracite-grey-1000g
 class: FFF
 brand_specific_id: F-4043D-GRISantmetal
 gtin: 3760276363663
 material:
-  slug: arianeplast-pla-metallic-anthracite-gray
+  slug: arianeplast-pla-metallic-anthracite-grey
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000
