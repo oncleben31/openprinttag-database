@@ -120,3 +120,49 @@ identity key. Pantone references are kept: `PLA+ Green` and
   60 °C, the others say nothing).
 * **The polymer of the five laser-marking filaments.**
 * **A weight for the 10 m samples.**
+
+## Session 4 (2026-08-28) — filling gaps from issue #32
+
+Targeted fetches (not a full re-crawl) for the products listed in
+[issue #32](https://github.com/oncleben31/openprinttag-database/issues/32).
+
+* **PLA Though+ / Ingeo 3D870 range added** (10 materials, category
+  `ingeo-3d870`, "PLA TOUGH + - Ingeo 3d870" on the site). Every one of the ten
+  product pages carries a stale top-level `Net Weight`/`Diameter` feature
+  (`8kg`/`2.85mm` or `2.3kg`) that does not match the only real, purchasable
+  attribute combination on the page (`1 kg`, `1.75mm`, with its own GTIN). The
+  attribute combination was trusted over the feature table for all ten —
+  it is what actually carries the GTIN and price. No colour codes are
+  published for this range, same as the rest of the catalogue.
+  Print temperature (210–230 °C) comes from the shared description text; the
+  bed temperature is stated once, as a single value ("Tray: 50°"), not a
+  range — recorded as `min_bed_temperature: max_bed_temperature: 50` rather
+  than left out, since the page does give an exact number.
+* **PETG Metallic Interferential Blue was crawled but not added** — pulled
+  back out at the user's request after review, before commit. The page (id
+  2564, GTIN `3760349160786`) shows the same stale-feature-vs-attribute
+  conflict as the Ingeo range above (feature says `2.3kg`, the one real
+  attribute says `1 kg`), and its refill (id 5096, GTIN `3760349166337`) is
+  still listed in issue #32 as missing. Left for a future pass.
+* **`arianeplast-pla-bamboo` (660g vs 2000g) — unresolved GTIN conflict.**
+  The live product page for id 399 ("bambou 660g ou 2kg") now exposes a
+  single sellable attribute: `660g`, GTIN `3770008753921`. The database
+  already carried a `2000g` package for the same product under a different
+  GTIN (`3760276362000`), from the session-3 crawl. Rather than overwrite
+  that entry on a guess, a second package (`arianeplast-pla-bamboo-660g`)
+  was added alongside it, per the user's explicit call — so the material now
+  carries two packages whose GTINs both come from the same product ID at
+  different points in time. Worth a fresh crawl of this one product later to
+  see whether the 2kg variant has actually been discontinued.
+* **`PLA Multicolor 350g` (id 5281) — title/body mismatch.** The page title
+  says "PLA + Multicolor", the body text says "Multicolor Pla Basic". Filed
+  under the title reading, i.e. `arianeplast-pla-multicolor` (the 5-colour
+  gradient, 2300g), per the user's explicit call — not the temperature match,
+  which favoured `arianeplast-pla-multicolor-basic` instead.
+* **No `brand_specific_id`** on the new `PHA White`/`PHA Black` 1000g
+  packages and the multicolor 350g package: their product pages carry no shop
+  reference (`blob.reference` is empty), only a PrestaShop numeric product
+  ID, which is not a manufacturer SKU.
+* `arianeplast-pla-oyster-1000g` (804-pla-huitre) was already in the database
+  with a matching GTIN — the issue's link to it was already resolved, no
+  change made.
