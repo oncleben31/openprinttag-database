@@ -8,7 +8,8 @@ type: PLA
 abbreviation: PLA
 url: https://www.arianeplast.com/en/pla-format-1-kg/219-pla-rouge-ral-3020-arianeplast-1kg-fabrique-en-france-.html
 primary_color:
-  color_rgba: '#e03f26ff'
+  color_rgba: '#bb1e10'
+  color_ral: '3020'
 tags:
 - bio_based
 properties:
