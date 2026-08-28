@@ -1,10 +1,10 @@
 uuid: 4b0ce42b-dd12-5715-8cbc-f8e0ddcee316
-slug: arianeplast-pla-ochre-orange-1000g
+slug: arianeplast-pla-orange-ochre-1000g
 class: FFF
 brand_specific_id: F-4043D-ocreO
 gtin: 3770006552533
 material:
-  slug: arianeplast-pla-ochre-orange
+  slug: arianeplast-pla-orange-ochre
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000
