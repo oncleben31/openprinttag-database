@@ -4,7 +4,7 @@ class: FFF
 brand_specific_id: C13/14H2
 gtin: 3760349162261
 material:
-  slug: arianeplast-pla-metallic-black-bambulab-compatible
+  slug: arianeplast-pla-metallic-black
 nominal_netto_full_weight: 1000
 filament_diameter: 1750
 filament_diameter_tolerance: 30

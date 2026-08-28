@@ -8,7 +8,8 @@ type: PLA
 abbreviation: PLA
 url: https://www.arianeplast.com/en/pla-format-1-kg/152-pla-ciel-4043d-3d-filament-arianeplast-1kg-fabrique-en-france-.html
 primary_color:
-  color_rgba: '#0099e6ff'
+  color_rgba: '#2271b3'
+  color_ral: '5015'
 tags:
 - bio_based
 properties:
