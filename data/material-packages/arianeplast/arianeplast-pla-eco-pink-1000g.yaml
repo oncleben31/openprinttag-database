@@ -1,10 +1,10 @@
 uuid: 9eff7d0e-d167-5f77-bfb8-8c1f7a18f2ef
-slug: arianeplast-pla-eco-rose-1000g
+slug: arianeplast-pla-eco-pink-1000g
 class: FFF
 brand_specific_id: ECO ROSE
 gtin: 3760276363809
 material:
-  slug: arianeplast-pla-eco-rose
+  slug: arianeplast-pla-eco-pink
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000

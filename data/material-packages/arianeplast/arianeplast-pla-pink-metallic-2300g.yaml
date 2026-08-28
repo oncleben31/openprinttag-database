@@ -1,10 +1,10 @@
 uuid: 4764352f-fe1e-509c-acaa-063f36bfd0fa
-slug: arianeplast-pla-rose-metallic-2300g
+slug: arianeplast-pla-pink-metallic-2300g
 class: FFF
 brand_specific_id: F-PLAROZMET2
 gtin: 3760349164777
 material:
-  slug: arianeplast-pla-rose-metallic
+  slug: arianeplast-pla-pink-metallic
 container:
   slug: 2300g
 nominal_netto_full_weight: 2300

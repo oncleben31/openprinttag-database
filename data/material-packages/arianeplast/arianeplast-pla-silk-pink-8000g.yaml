@@ -1,10 +1,10 @@
 uuid: d898e212-6f03-5eef-a887-f247f4a6e4e2
-slug: arianeplast-pla-silk-rose-8000g
+slug: arianeplast-pla-silk-pink-8000g
 class: FFF
 brand_specific_id: F-PLASILKROSE8
 gtin: 3760349163909
 material:
-  slug: arianeplast-pla-silk-rose
+  slug: arianeplast-pla-silk-pink
 container:
   slug: 8000g
 nominal_netto_full_weight: 8000
