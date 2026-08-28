@@ -1,10 +1,10 @@
 uuid: e9e2a095-4018-5a35-8e2a-8a1083c47187
-slug: arianeplast-pla-translucent-violet-1000g
+slug: arianeplast-pla-translucent-purple-1000g
 class: FFF
 brand_specific_id: F-PLA VIOLET TRANS
 gtin: 3760276360327
 material:
-  slug: arianeplast-pla-translucent-violet
+  slug: arianeplast-pla-translucent-purple
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000

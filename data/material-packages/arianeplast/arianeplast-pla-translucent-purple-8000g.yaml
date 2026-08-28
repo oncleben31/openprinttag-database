@@ -1,10 +1,10 @@
 uuid: 6ab77e06-01bd-58a0-95c0-017e5e46025f
-slug: arianeplast-pla-translucent-violet-8000g
+slug: arianeplast-pla-translucent-purple-8000g
 class: FFF
 brand_specific_id: F-PLAViT8kg
 gtin: 3760349162735
 material:
-  slug: arianeplast-pla-translucent-violet
+  slug: arianeplast-pla-translucent-purple
 container:
   slug: 8000g
 nominal_netto_full_weight: 8000

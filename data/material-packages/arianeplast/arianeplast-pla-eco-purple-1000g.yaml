@@ -1,10 +1,10 @@
 uuid: d9451c3f-c4b4-5b9b-85ac-4ef32f2f1430
-slug: arianeplast-pla-eco-violet-1000g
+slug: arianeplast-pla-eco-purple-1000g
 class: FFF
 brand_specific_id: ECO VIOLET
 gtin: 3760276363892
 material:
-  slug: arianeplast-pla-eco-violet
+  slug: arianeplast-pla-eco-purple
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000
