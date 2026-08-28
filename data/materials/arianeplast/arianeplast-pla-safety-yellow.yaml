@@ -8,7 +8,8 @@ type: PLA
 abbreviation: PLA
 url: https://www.arianeplast.com/en/pla-format-1-kg/2924-pla-jaune-securite-ral-1003-3d-filament-arianeplast-1kg.html
 primary_color:
-  color_rgba: '#f8cc00ff'
+  color_rgba: '#f9a800'
+  color_ral: '1003'
 tags:
 - bio_based
 properties:
