@@ -1,10 +1,10 @@
 uuid: fca9d390-79f3-58ed-b2b3-4c6aa030c7ad
-slug: arianeplast-pla-interferential-blue-made-1000g
+slug: arianeplast-pla-interferential-blue-1000g
 class: FFF
 brand_specific_id: F-PLABLEUINTER1
 gtin: 3760276363755
 material:
-  slug: arianeplast-pla-interferential-blue-made
+  slug: arianeplast-pla-interferential-blue
 container:
   slug: 1000g
 nominal_netto_full_weight: 1000
