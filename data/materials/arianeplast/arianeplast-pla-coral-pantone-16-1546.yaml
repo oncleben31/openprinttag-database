@@ -1,12 +1,14 @@
-uuid: 0d75efcd-12a6-5d1f-9a41-95641d54e358
-slug: arianeplast-pla-coral-16-1546
+uuid: 19ee7433-169a-5d0d-ac6a-0f06a965e04f
+slug: arianeplast-pla-coral-pantone-16-1546
 brand:
   slug: arianeplast
-name: PLA+ Coral 16-1546
+name: PLA+ Coral Pantone 16-1546
 class: FFF
 type: PLA
 abbreviation: PLA
 url: https://www.arianeplast.com/en/pla-format-1-kg/2568-pla-corail-16-1546-3d-filament-arianeplast-1kg-fabrique-en-france-.html
+primary_color:
+  color_rgba: '#ff6f61'
 tags:
 - bio_based
 properties:
